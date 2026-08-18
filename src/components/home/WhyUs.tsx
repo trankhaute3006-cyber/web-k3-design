@@ -46,7 +46,7 @@ export function WhyUs() {
                 <Reveal as="li" key={value.title} delay={i * 60}>
                   <div className="flex gap-6">
                     <span
-                      className="tabular shrink-0 font-display text-3xl leading-none font-bold text-line-strong"
+                      className="tabular shrink-0 font-display text-3xl leading-none font-bold text-numeral"
                       aria-hidden="true"
                     >
                       {String(i + 1).padStart(2, "0")}

@@ -49,7 +49,7 @@ export function Header() {
     <>
       <a
         href="#noi-dung-chinh"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-accent-bright focus:px-5 focus:py-3 focus:font-display focus:font-semibold focus:text-ink"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-cta focus:px-5 focus:py-3 focus:font-display focus:font-semibold focus:text-white"
       >
         Bỏ qua, đến nội dung chính
       </a>
@@ -71,7 +71,7 @@ export function Header() {
             aria-label={`${site.name} — về trang chủ`}
             className="shrink-0"
           >
-            <Logo dark={onDark} className="h-9 w-auto sm:h-10" />
+            <Logo dark={onDark} />
           </Link>
 
           {/* Menu desktop */}
@@ -121,7 +121,7 @@ export function Header() {
                 "hidden min-h-11 items-center rounded-full px-6 font-display text-[0.9375rem] font-semibold transition-colors sm:inline-flex",
                 onDark
                   ? "bg-white text-ink hover:bg-canvas"
-                  : "bg-accent text-white hover:bg-accent-dark"
+                  : "bg-cta text-white hover:bg-cta-dark"
               )}
             >
               Liên hệ

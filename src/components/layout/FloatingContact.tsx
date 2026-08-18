@@ -37,7 +37,7 @@ export function FloatingContact() {
             href={zaloHref(site.zalo)}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex min-h-14 items-center justify-center gap-2.5 bg-accent font-display text-[0.9375rem] font-semibold text-white transition-colors active:bg-accent-dark"
+            className="flex min-h-14 items-center justify-center gap-2.5 bg-cta font-display text-[0.9375rem] font-semibold text-white transition-colors active:bg-cta-dark"
           >
             <MessageCircle size={19} aria-hidden="true" />
             Chat Zalo
@@ -52,7 +52,7 @@ export function FloatingContact() {
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Nhắn tin qua Zalo"
-          className="group inline-flex h-14 w-14 items-center justify-center rounded-full bg-accent-bright text-ink shadow-e3 transition-[filter,transform] duration-200 hover:scale-105 hover:brightness-105"
+          className="group inline-flex h-14 w-14 items-center justify-center rounded-full bg-cta text-white shadow-e3 transition-[background-color,transform] duration-200 hover:bg-cta-dark hover:scale-105"
         >
           <MessageCircle size={23} aria-hidden="true" />
         </a>

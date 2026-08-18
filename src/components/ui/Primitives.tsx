@@ -76,11 +76,11 @@ export function PanelSection({
   children: ReactNode;
   className?: string;
   id?: string;
-  tone?: "deep" | "lime" | "surface";
+  tone?: "deep" | "pale" | "surface";
 }) {
   const tones = {
     deep: "bg-deep text-white k3-on-dark",
-    lime: "bg-accent-bright text-ink",
+    pale: "bg-accent-pale text-ink",
     surface: "bg-surface text-ink",
   };
   return (
@@ -149,10 +149,11 @@ export function SectionHeading({
 
 type ButtonVariant =
   | "primary"
+  | "navy"
   | "secondary"
   | "ghost"
   | "onDark"
-  | "lime"
+  | "sky"
   | "white";
 type ButtonSize = "md" | "lg";
 
@@ -162,15 +163,17 @@ const buttonBase =
   "disabled:cursor-not-allowed disabled:opacity-50 select-none text-center active:scale-[0.98]";
 
 const buttonVariants: Record<ButtonVariant, string> = {
-  // Nen sang
-  primary: "bg-accent text-white hover:bg-accent-dark shadow-e1 hover:shadow-e2",
+  // Do = hanh dong chinh (mau do cua logo)
+  primary: "bg-cta text-white hover:bg-cta-dark shadow-e1 hover:shadow-e2",
+  // Navy = hanh dong manh nhung khong phai CTA chinh
+  navy: "bg-accent text-white hover:bg-accent-dark shadow-e1 hover:shadow-e2",
   secondary:
     "bg-transparent text-ink border border-line-strong hover:border-ink hover:bg-surface",
   ghost: "bg-transparent text-ink hover:bg-canvas-alt",
-  // Nen toi
+  // Dat tren nen toi
   white: "bg-white text-ink hover:bg-canvas shadow-e2",
   onDark: "bg-white/12 text-white border border-white/25 hover:bg-white/20",
-  lime: "bg-accent-bright text-ink hover:brightness-[1.06] shadow-e2",
+  sky: "bg-accent-bright text-ink hover:brightness-[1.06] shadow-e2",
 };
 
 const buttonSizes: Record<ButtonSize, string> = {
@@ -320,7 +323,7 @@ export function PageHeader({
           aria-hidden="true"
         />
         <div
-          className="absolute -top-32 -right-24 h-96 w-96 rounded-full bg-accent-bright/12 blur-3xl"
+          className="absolute -top-32 -right-24 h-96 w-96 rounded-full bg-accent-bright/15 blur-3xl"
           aria-hidden="true"
         />
         <Container className="relative">

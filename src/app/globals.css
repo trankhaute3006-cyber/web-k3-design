@@ -2,54 +2,60 @@
 
 /* ============================================================
    K3 DESIGN — DESIGN TOKENS
-   Phong cach: Organic Editorial — the bo goc lon tren nen kem,
-   khoi olive dam, diem nhan lime, glass card noi tren anh.
+   Phong cach: Corporate Editorial — the bo goc lon tren nen xam xanh,
+   khoi navy dam theo logo, diem nhan xanh kinh va do, glass card noi tren anh.
    ============================================================ */
 
 @theme {
   /* ---------- Chu ---------- */
-  --color-ink: #1b2110; /* 14.0:1 tren kem — chu chinh   */
-  --color-ink-mid: #38431f; /*  8.9:1 — chu doan van          */
-  --color-muted-fg: #5a6738; /*  5.2:1 — chu phu               */
+  --color-ink: #0b1b33; /* 15.8:1 tren nen sang — chu chinh */
+  --color-ink-mid: #1f3a5f; /* 10.5:1 — chu doan van             */
+  --color-muted-fg: #4a5f7a; /*  6.0:1 — chu phu                  */
 
   /* ---------- Nen ---------- */
-  --color-canvas: #edefcb; /* kem — nen trang               */
-  --color-canvas-alt: #f4f5de; /* kem sang hon                  */
+  --color-canvas: #f2f5fa; /* xam xanh nhat — nen trang    */
+  --color-canvas-alt: #e7edf7; /* nen phan doan xen ke         */
   --color-surface: #ffffff;
-  --color-deep: #2f3a16; /* olive dam — hero, footer      */
-  --color-deep-2: #3e4b1d; /* olive vua — nut phu tren toi  */
-  --color-deep-3: #55642c;
+  --color-deep: #002e6e; /* navy — hero, quy trinh, footer */
+  --color-deep-2: #0b4394; /* navy vua — nut phu tren toi    */
+  --color-deep-3: #14559f;
 
   /* ---------- Duong ke ---------- */
-  --color-line: #dde1b4;
-  --color-line-strong: #c6cb95;
+  --color-line: #d6e0ee;
+  --color-line-strong: #b9c8dd;
+  --color-numeral: #6e88ae; /* so thu tu trang tri — 3.1:1, dat nguong chu lon */
 
-  /* ---------- Diem nhan ----------
-     accent        = olive dam, dat WCAG AA cho CHU tren nen kem (6.1:1)
-     accent-bright = lime, chi dung tren NEN TOI (8.5:1) va lam nen nut
-     accent-dark   = hover cua nut dac                                  */
-  --color-accent: #46600f;
-  --color-accent-bright: #b7e870;
-  --color-accent-dark: #34490a;
-  --color-accent-soft: #e4edc4;
+  /* ---------- Diem nhan (lay tu logo K3 Design) ----------
+     accent        = navy #003D91 cua logo — chu, link, nut tren nen sang (9.3:1)
+     accent-bright = xanh kinh lam sang — CHU tren nen navy (6.6:1) va nen chip
+     accent-pale   = nen dai nhan lon
+     cta           = do #ED0435 cua logo, dam nhe cho dat AA voi chu trang    */
+  --color-accent: #003d91;
+  --color-accent-bright: #6ec1fa;
+  --color-accent-pale: #c7e4fb;
+  --color-accent-soft: #dde9f9;
+  --color-accent-dark: #002e6e;
 
-  --color-success: #3f6212;
-  --color-danger: #b91c1c;
+  --color-cta: #e00532; /* chu trang 4.96:1 */
+  --color-cta-dark: #c8072f; /* hover      5.95:1 */
+
+  --color-success: #15803d;
+  --color-danger: #c8072f; /* 5.45:1 tren nen sang */
 
   /* ---------- Font ---------- */
   --font-display: var(--font-archivo), "Segoe UI", sans-serif;
   --font-sans: var(--font-be-vietnam), "Segoe UI", sans-serif;
 
   /* ---------- Bo goc ---------- */
-  --radius-sm: 0.5rem; /*  8px — the nho, o nhap */
-  --radius-md: 1rem; /* 16px — the noi dung    */
-  --radius-lg: 1.5rem; /* 24px — the lon         */
-  --radius-xl: 2rem; /* 32px — khoi hero       */
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
 
   /* ---------- Do sau ---------- */
-  --shadow-e1: 0 1px 2px rgb(27 33 16 / 0.05), 0 2px 6px rgb(27 33 16 / 0.04);
-  --shadow-e2: 0 4px 14px rgb(27 33 16 / 0.08), 0 1px 4px rgb(27 33 16 / 0.05);
-  --shadow-e3: 0 18px 44px rgb(27 33 16 / 0.16), 0 4px 12px rgb(27 33 16 / 0.08);
+  --shadow-e1: 0 1px 2px rgb(11 27 51 / 0.05), 0 2px 6px rgb(11 27 51 / 0.04);
+  --shadow-e2: 0 4px 14px rgb(11 27 51 / 0.08), 0 1px 4px rgb(11 27 51 / 0.05);
+  --shadow-e3: 0 18px 44px rgb(11 27 51 / 0.16), 0 4px 12px rgb(11 27 51 / 0.08);
 
   /* ---------- Chuyen dong ---------- */
   --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
@@ -180,13 +186,13 @@
   -webkit-backdrop-filter: blur(18px) saturate(1.15);
   box-shadow:
     inset 0 1px 0 rgb(255 255 255 / 0.22),
-    0 20px 44px rgb(20 26 10 / 0.3);
+    0 20px 44px rgb(0 18 44 / 0.34);
 }
 
 /* Trinh duyet khong ho tro backdrop-filter -> nen dac de van doc duoc */
 @supports not (backdrop-filter: blur(1px)) {
   .k3-glass {
-    background: rgb(35 43 18 / 0.86);
+    background: rgb(0 35 84 / 0.88);
   }
 }
 
@@ -222,10 +228,10 @@
 .k3-grid-lines {
   background-image: linear-gradient(
       to right,
-      rgb(183 232 112 / 0.09) 1px,
+      rgb(110 193 250 / 0.12) 1px,
       transparent 1px
     ),
-    linear-gradient(to bottom, rgb(183 232 112 / 0.09) 1px, transparent 1px);
+    linear-gradient(to bottom, rgb(110 193 250 / 0.12) 1px, transparent 1px);
   background-size: 4rem 4rem;
 }
 

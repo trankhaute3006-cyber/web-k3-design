@@ -158,7 +158,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-3 border-t border-white/12 py-7 text-sm text-canvas/50 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-3 border-t border-white/12 py-7 text-sm text-canvas/62 sm:flex-row sm:items-center sm:justify-between">
             <p>
               © {new Date().getFullYear()} {site.legalName}. MST {site.taxCode}.
             </p>

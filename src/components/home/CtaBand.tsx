@@ -5,9 +5,9 @@ import { telHref } from "@/lib/utils";
 
 export function CtaBand() {
   return (
-    <PanelSection tone="lime">
+    <PanelSection tone="pale">
       <div
-        className="absolute -top-20 -right-16 h-72 w-72 rounded-full bg-white/25 blur-3xl"
+        className="absolute -top-20 -right-16 h-72 w-72 rounded-full bg-white/50 blur-3xl"
         aria-hidden="true"
       />
       <Container className="relative">
@@ -24,11 +24,7 @@ export function CtaBand() {
           </div>
 
           <div className="flex w-full shrink-0 flex-col gap-3 sm:w-auto sm:flex-row">
-            <Button
-              href="/lien-he/"
-              size="lg"
-              className="bg-deep text-white hover:bg-ink"
-            >
+            <Button href="/lien-he/" size="lg">
               Đặt lịch khảo sát
               <ArrowRight size={19} aria-hidden="true" />
             </Button>
@@ -36,7 +32,7 @@ export function CtaBand() {
               href={telHref(site.phoneRaw)}
               size="lg"
               variant="secondary"
-              className="border-deep/30 text-ink hover:border-deep hover:bg-white"
+              className="border-deep/35 text-ink hover:border-deep hover:bg-white"
             >
               <Phone size={18} aria-hidden="true" />
               <span className="tabular">{site.phone}</span>

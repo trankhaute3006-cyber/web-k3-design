@@ -41,6 +41,7 @@ Mở http://localhost:3000
 | CSS | Tailwind CSS v4 | Design token khai báo trong `globals.css` |
 | Icon | lucide-react | SVG, một bộ duy nhất, không dùng emoji |
 | Chữ | Archivo + Be Vietnam Pro | Cả hai hỗ trợ đầy đủ dấu tiếng Việt, tự host qua `next/font` |
+| Logo | `public/logo.png` 512×512 nền trong suốt | Bóc từ `K3_DESIGN_logo_transparent.pdf`, giữ nguyên màu gốc |
 | Form | Web3Forms | Không cần backend, phù hợp hosting tĩnh |
 | CI/CD | GitHub Actions → FTP | Push là tự deploy |
 
@@ -84,7 +85,9 @@ src/
 public/
 ├── .htaccess                # Cấu hình Apache/LiteSpeed cho Hostinger
 ├── images/                  # Ảnh (đang là placeholder SVG)
-├── favicon.svg
+├── logo.png                 # Logo chính thức (512×512, nền trong suốt)
+├── apple-touch-icon.png     # Icon khi lưu ra màn hình chính (180×180)
+├── favicon.svg              # Icon tab trình duyệt (rút gọn còn chữ K)
 └── og-image.svg             # Ảnh hiển thị khi chia sẻ link
 ```
 
@@ -92,29 +95,42 @@ public/
 
 ## Hệ thống thiết kế
 
-Phong cách **Organic Editorial**: nền kem, các khối lớn bo góc 24–32px thụt vào
-khỏi mép màn hình, khối olive đậm làm điểm neo, lime làm điểm nhấn, và glass
-card nổi trên ảnh ở hero. Toàn bộ token khai báo trong `src/app/globals.css`.
+Phong cách **Corporate Editorial**: nền xám xanh nhạt, các khối lớn bo góc 20–32px
+thụt vào khỏi mép màn hình, khối navy đậm làm điểm neo, glass card nổi trên ảnh
+ở hero. Toàn bộ màu **lấy trực tiếp từ logo K3 Design**. Token khai báo trong
+`src/app/globals.css`.
 
 ### Bảng màu
 
 | Token | Mã màu | Dùng cho | Tương phản |
 | --- | --- | --- | --- |
-| `ink` | `#1B2110` | Chữ chính | 14.0:1 trên kem |
-| `ink-mid` | `#38431F` | Chữ đoạn văn | 8.9:1 |
-| `muted-fg` | `#5A6738` | Chữ phụ | 5.2:1 |
-| `canvas` | `#EDEFCB` | Nền trang (kem) | — |
-| `canvas-alt` | `#F4F5DE` | Nền phân đoạn xen kẽ | — |
+| `ink` | `#0B1B33` | Chữ chính | 15.8:1 |
+| `ink-mid` | `#1F3A5F` | Chữ đoạn văn | 10.5:1 |
+| `muted-fg` | `#4A5F7A` | Chữ phụ | 6.0:1 |
+| `canvas` | `#F2F5FA` | Nền trang | — |
+| `canvas-alt` | `#E7EDF7` | Nền phân đoạn xen kẽ | — |
 | `surface` | `#FFFFFF` | Nền thẻ | — |
-| `deep` | `#2F3A16` | Khối olive: hero, quy trình, footer | — |
-| `accent` | `#46600F` | Chữ, link và nút trên nền sáng | 6.1:1 trên kem |
-| `accent-bright` | `#B7E870` | Lime — chỉ dùng trên nền tối và làm nền nút | 8.5:1 trên olive |
-| `accent-dark` | `#34490A` | Hover của nút đặc | 7.3:1 với chữ trắng |
-| `line` / `line-strong` | `#DDE1B4` / `#C6CB95` | Viền và đường kẻ | — |
+| `deep` | `#002E6E` | Khối navy: hero, quy trình, footer | chữ trắng 13:1 |
+| `accent` | `#003D91` | **Navy của logo** — chữ, link, nút phụ | 9.3:1 |
+| `accent-bright` | `#6EC1FA` | Xanh kính — chữ trên nền navy | 6.6:1 trên navy |
+| `accent-pale` | `#C7E4FB` | Nền dải CTA | chữ ink 13:1 |
+| `cta` | `#E00532` | **Đỏ của logo** — nút hành động chính | chữ trắng 5.0:1 |
+| `cta-dark` | `#C8072F` | Hover của nút đỏ | 6.0:1 |
+| `danger` | `#C8072F` | Chữ báo lỗi | 5.5:1 |
+| `line` / `line-strong` | `#D6E0EE` / `#B9C8DD` | Viền, đường kẻ | — |
 
-Có **hai** biến thể xanh là chủ ý: lime `#B7E870` chỉ đạt 1.6:1 khi làm chữ trên
-nền kem nên không bao giờ dùng làm chữ trên nền sáng; bản olive đậm
-`#46600F` gánh vai trò đó. Ngược lại trên nền olive đậm thì lime đạt 8.5:1.
+**Ba màu gốc lấy từ file logo** bằng cách đếm pixel: navy , đỏ ,
+xanh kính .
+
+Ba điều chỉnh nhỏ so với màu gốc, đều vì lý do tương phản:
+
+- Đỏ nút bấm dùng  thay vì  — màu gốc chỉ đạt đúng 4.50:1 với
+  chữ trắng, sát ngưỡng đến mức rủi ro; bản đậm hơn một chút đạt 4.96:1.
+- Xanh kính  chỉ đạt 3.7:1 trên nền navy nên **không dùng làm chữ**;
+  bản sáng hơn  (6.6:1) đảm nhiệm vai trò đó. Màu gốc vẫn dùng cho
+  đồ họa và mảng màu.
+- Logo giữ nguyên 100% màu gốc. Trên nền navy, logo được đặt trong **ô trắng bo
+  góc** thay vì đổi màu logo — navy của logo sẽ chìm nếu đặt thẳng lên nền navy.
 
 ### Hình khối
 
@@ -156,7 +172,6 @@ theo breakpoint) để lộ nền kem bao quanh.
 ## Việc cần làm trước khi lên production
 
 - [ ] Điền thông tin thật vào `src/data/site.ts` (mọi dòng có ghi chú `[SUA]`)
-- [ ] Thay logo thật — xem hướng dẫn trong `src/components/layout/Logo.tsx`
 - [ ] Thay ảnh dự án thật vào `public/images/projects/`
 - [ ] Lấy access key Web3Forms để bật form liên hệ (DEPLOY.md, Phần 8)
 - [ ] Đổi `site.url` sang tên miền thật

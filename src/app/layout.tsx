@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
-    apple: "/apple-touch-icon.svg",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -77,7 +77,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   // Khong dat maximumScale/userScalable=no — nguoi dung phai duoc phep phong to
-  themeColor: "#0b1220",
+  themeColor: "#002e6e",
 };
 
 /** Du lieu co cau truc cho Google */

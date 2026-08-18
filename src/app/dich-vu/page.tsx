@@ -91,7 +91,7 @@ export default function ServicesPage() {
                             <Icon size={26} strokeWidth={1.7} aria-hidden="true" />
                           </span>
                           <span
-                            className="tabular font-display text-4xl font-bold text-line-strong"
+                            className="tabular font-display text-4xl font-bold text-numeral"
                             aria-hidden="true"
                           >
                             {String(i + 1).padStart(2, "0")}

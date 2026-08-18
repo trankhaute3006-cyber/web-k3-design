@@ -461,7 +461,7 @@ export function ContactForm() {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="inline-flex min-h-14 shrink-0 cursor-pointer items-center justify-center gap-2.5 rounded-full bg-accent px-8 font-display font-semibold text-white shadow-e1 transition-[background-color,transform] duration-200 hover:bg-accent-dark active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+          className="inline-flex min-h-14 shrink-0 cursor-pointer items-center justify-center gap-2.5 rounded-full bg-cta px-8 font-display font-semibold text-white shadow-e1 transition-[background-color,transform] duration-200 hover:bg-cta-dark active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {status === "sending" ? (
             <>

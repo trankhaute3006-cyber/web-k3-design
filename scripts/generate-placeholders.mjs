@@ -14,10 +14,10 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 /* ---------- Bang mau thuong hieu ---------- */
 const PALETTES = [
-  { bg: "#2f3a16", mid: "#3e4b1d", line: "#55642c", pop: "#b7e870" },
-  { bg: "#26300f", mid: "#36421a", line: "#4d5c26", pop: "#cdeb99" },
-  { bg: "#3e4b1d", mid: "#4d5c26", line: "#67784a", pop: "#b7e870" },
-  { bg: "#1f2a0c", mid: "#2f3a16", line: "#44522170", pop: "#a3d45c" },
+  { bg: "#002e6e", mid: "#0b4394", line: "#14559f", pop: "#ed0435" },
+  { bg: "#04255c", mid: "#003d91", line: "#1a5aa8", pop: "#6ec1fa" },
+  { bg: "#0b4394", mid: "#14559f", line: "#3d7cc4", pop: "#ed0435" },
+  { bg: "#021c47", mid: "#002e6e", line: "#0f4b8f", pop: "#8ed0fb" },
 ];
 
 /** Bam chuoi -> so, de moi anh co bo cuc rieng nhung on dinh giua cac lan build */
@@ -39,11 +39,12 @@ function rng(seed) {
 }
 
 /** Do hoa: cac khoi nha dang mat cat + luoi ky thuat */
+/** Anh hero dung tong sang hon de nhin ro khoi cong trinh duoi lop phu navy */
 const HERO_PALETTE = {
-  bg: "#5c6b33",
-  mid: "#7d8f4a",
-  line: "#a8bd६f".replace("६", "6"),
-  pop: "#d9f2a8",
+  bg: "#1c4d8c",
+  mid: "#2f6bad",
+  line: "#5b93cd",
+  pop: "#ed0435",
 };
 
 function buildSvg({ w, h, seed, label, bright }) {
@@ -200,18 +201,18 @@ for (const f of files) {
 
 /* ---------- Favicon ---------- */
 
-const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#2f3a16"/><path d="M17 17h7.5v12.6L35 17h9.8l-13 15.1L45 47H35.2L24.5 33.6V47H17z" fill="#b7e870"/></svg>`;
+const favicon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#003d91"/><path d="M17 17h7.5v12.6L35 17h9.8l-13 15.1L45 47H35.2L24.5 33.6V47H17z" fill="#ffffff"/><rect x="17" y="50" width="30" height="3.5" rx="1.75" fill="#ED0435"/></svg>`;
 writeFileSync(join(root, "public/favicon.svg"), favicon, "utf8");
-writeFileSync(join(root, "public/apple-touch-icon.svg"), favicon, "utf8");
-written += 2;
+// apple-touch-icon.png duoc tao tu logo that, khong ghi de o day
+written += 1;
 
 /* ---------- Anh dai dien khach hang (trang tri) ---------- */
 
 const AVATAR_TONES = [
-  ["#b7e870", "#2f3a16"],
-  ["#cdeb99", "#3e4b1d"],
-  ["#a3d45c", "#26300f"],
-  ["#dfeec0", "#55642c"],
+  ["#8ed0fb", "#002e6e"],
+  ["#c7e4fb", "#0b4394"],
+  ["#6ec1fa", "#04255c"],
+  ["#dde9f9", "#14559f"],
 ];
 
 for (let i = 0; i < AVATAR_TONES.length; i++) {

@@ -36,7 +36,7 @@ export default function ProcessPage() {
                   {/* So thu tu */}
                   <div className="sm:col-span-3 lg:col-span-2">
                     <span
-                      className="tabular font-display text-[3.5rem] leading-none font-bold text-line-strong transition-colors duration-300 group-hover:text-accent lg:text-[4.5rem]"
+                      className="tabular font-display text-[3.5rem] leading-none font-bold text-numeral transition-colors duration-300 group-hover:text-accent lg:text-[4.5rem]"
                       aria-hidden="true"
                     >
                       {step.step}
