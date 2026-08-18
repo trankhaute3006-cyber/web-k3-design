@@ -1,0 +1,64 @@
+name: Build & Deploy to Hostinger
+
+# Chay khi day code len nhanh main, hoac bam nut chay thu cong trong tab Actions
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Khong cho 2 lan deploy chay chong len nhau
+concurrency:
+  group: deploy-hostinger
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    name: Build tinh va tai len Hostinger
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lay ma nguon
+        uses: actions/checkout@v4
+
+      - name: Cai dat Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Cai dat thu vien
+        run: npm ci
+
+      - name: Kiem tra kieu du lieu
+        run: npm run typecheck
+
+      - name: Tao anh placeholder (bo qua neu da co anh that)
+        run: npm run placeholders
+
+      - name: Build trang tinh
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Kiem tra ket qua build
+        run: |
+          test -f out/index.html || (echo "Khong tim thay out/index.html" && exit 1)
+          test -f out/.htaccess  || echo "Canh bao: thieu .htaccess trong out/"
+          echo "So file se deploy: $(find out -type f | wc -l)"
+
+      - name: Tai len Hostinger bang FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Thu muc goc cua website tren Hostinger. Doi neu dung addon domain.
+          server-dir: ${{ secrets.FTP_SERVER_DIR || 'public_html/' }}
+          local-dir: ./out/
+          # Chi tai len file da thay doi so voi lan truoc -> deploy rat nhanh
+          state-name: .ftp-deploy-sync-state.json
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**

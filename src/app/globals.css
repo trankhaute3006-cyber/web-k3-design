@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+/* ============================================================
+   K3 DESIGN — DESIGN TOKENS
+   Phong cach: Organic Editorial — the bo goc lon tren nen kem,
+   khoi olive dam, diem nhan lime, glass card noi tren anh.
+   ============================================================ */
+
+@theme {
+  /* ---------- Chu ---------- */
+  --color-ink: #1b2110; /* 14.0:1 tren kem — chu chinh   */
+  --color-ink-mid: #38431f; /*  8.9:1 — chu doan van          */
+  --color-muted-fg: #5a6738; /*  5.2:1 — chu phu               */
+
+  /* ---------- Nen ---------- */
+  --color-canvas: #edefcb; /* kem — nen trang               */
+  --color-canvas-alt: #f4f5de; /* kem sang hon                  */
+  --color-surface: #ffffff;
+  --color-deep: #2f3a16; /* olive dam — hero, footer      */
+  --color-deep-2: #3e4b1d; /* olive vua — nut phu tren toi  */
+  --color-deep-3: #55642c;
+
+  /* ---------- Duong ke ---------- */
+  --color-line: #dde1b4;
+  --color-line-strong: #c6cb95;
+
+  /* ---------- Diem nhan ----------
+     accent        = olive dam, dat WCAG AA cho CHU tren nen kem (6.1:1)
+     accent-bright = lime, chi dung tren NEN TOI (8.5:1) va lam nen nut
+     accent-dark   = hover cua nut dac                                  */
+  --color-accent: #46600f;
+  --color-accent-bright: #b7e870;
+  --color-accent-dark: #34490a;
+  --color-accent-soft: #e4edc4;
+
+  --color-success: #3f6212;
+  --color-danger: #b91c1c;
+
+  /* ---------- Font ---------- */
+  --font-display: var(--font-archivo), "Segoe UI", sans-serif;
+  --font-sans: var(--font-be-vietnam), "Segoe UI", sans-serif;
+
+  /* ---------- Bo goc ---------- */
+  --radius-sm: 0.5rem; /*  8px — the nho, o nhap */
+  --radius-md: 1rem; /* 16px — the noi dung    */
+  --radius-lg: 1.5rem; /* 24px — the lon         */
+  --radius-xl: 2rem; /* 32px — khoi hero       */
+
+  /* ---------- Do sau ---------- */
+  --shadow-e1: 0 1px 2px rgb(27 33 16 / 0.05), 0 2px 6px rgb(27 33 16 / 0.04);
+  --shadow-e2: 0 4px 14px rgb(27 33 16 / 0.08), 0 1px 4px rgb(27 33 16 / 0.05);
+  --shadow-e3: 0 18px 44px rgb(27 33 16 / 0.16), 0 4px 12px rgb(27 33 16 / 0.08);
+
+  /* ---------- Chuyen dong ---------- */
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  /* Khoang thut cua the bo goc so voi mep man hinh */
+  --inset: 0.5rem;
+
+  --z-sticky: 40;
+  --z-overlay: 60;
+  --z-modal: 80;
+  --z-float: 90;
+
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --inset: 0.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --inset: 1rem;
+  }
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+/* Dat trong @layer base de cac lop tien ich cua Tailwind (vi du text-white)
+   luon de len duoc — CSS khong nam trong layer se thang moi layer. */
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 7rem;
+    background-color: var(--color-canvas);
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1rem; /* 16px — tranh iOS tu zoom */
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+    text-wrap: balance;
+    color: var(--color-ink);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* ============================================================
+   FOCUS
+   ============================================================ */
+
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.k3-on-dark :focus-visible,
+.bg-deep :focus-visible {
+  outline-color: var(--color-accent-bright);
+}
+
+/* ============================================================
+   KHOI BO GOC — dung cho hero va dau trang con
+   ============================================================ */
+
+.k3-inset {
+  padding-inline: var(--inset);
+  padding-top: var(--inset);
+}
+
+.k3-panel {
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .k3-panel {
+    border-radius: 2rem;
+  }
+}
+
+/* ============================================================
+   GLASS CARD — the noi tren anh
+   ============================================================ */
+
+.k3-glass {
+  background: linear-gradient(
+    150deg,
+    rgb(255 255 255 / 0.16),
+    rgb(255 255 255 / 0.07)
+  );
+  border: 1px solid rgb(255 255 255 / 0.22);
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.22),
+    0 20px 44px rgb(20 26 10 / 0.3);
+}
+
+/* Trinh duyet khong ho tro backdrop-filter -> nen dac de van doc duoc */
+@supports not (backdrop-filter: blur(1px)) {
+  .k3-glass {
+    background: rgb(35 43 18 / 0.86);
+  }
+}
+
+/* ============================================================
+   TIEN ICH
+   ============================================================ */
+
+.k3-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.k3-eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: 2px;
+  border-radius: 2px;
+  background-color: currentColor;
+}
+
+.k3-eyebrow[data-on-dark="true"] {
+  color: var(--color-accent-bright);
+}
+
+/* Luoi ky thuat mo */
+.k3-grid-lines {
+  background-image: linear-gradient(
+      to right,
+      rgb(183 232 112 / 0.09) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, rgb(183 232 112 / 0.09) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
+
+/* Gach chan chay khi hover link menu */
+.k3-navlink {
+  position: relative;
+}
+
+.k3-navlink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 220ms var(--ease-out-soft);
+}
+
+.k3-navlink:hover::after,
+.k3-navlink[data-active="true"]::after {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   HIEU UNG XUAT HIEN KHI CUON
+   ============================================================ */
+
+.k3-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 620ms var(--ease-out-soft),
+    transform 620ms var(--ease-out-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.k3-reveal[data-shown="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* ============================================================
+   TON TRONG NGUOI DUNG TAT CHUYEN DONG
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .k3-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================================================
+   IN AN
+   ============================================================ */
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+}
