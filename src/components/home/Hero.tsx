@@ -153,7 +153,7 @@ export function Hero() {
                 {/* The: so lieu tin cay */}
                 <div className="k3-glass w-full rounded-2xl p-6 sm:max-w-xs lg:w-full lg:max-w-[18rem] lg:-mt-2 lg:mr-6">
                   <p className="text-xs font-semibold tracking-[0.14em] text-canvas/65 uppercase">
-                    Được tin tưởng bởi
+                    Năng lực đến nay
                   </p>
                   <p className="mt-2 font-display text-[2.75rem] leading-none font-bold text-accent-bright">
                     <Counter value={trusted.value} suffix={trusted.suffix} />

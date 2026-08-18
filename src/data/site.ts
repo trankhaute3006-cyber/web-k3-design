@@ -62,10 +62,10 @@ export const site = {
 
   // ---------- So lieu nang luc (hien o trang chu) ----------
   stats: [
-    { value: 12, suffix: "+", label: "Năm kinh nghiệm" }, // [SUA]
-    { value: 250, suffix: "+", label: "Công trình bàn giao" }, // [SUA]
-    { value: 45, suffix: "", label: "Kỹ sư & kiến trúc sư" }, // [SUA]
-    { value: 98, suffix: "%", label: "Khách hàng giới thiệu lại" }, // [SUA]
+    { value: 3, suffix: "", label: "Năm kinh nghiệm" }, // [SUA]
+    { value: 20, suffix: "+", label: "Công trình bàn giao" }, // [SUA]
+    { value: 10, suffix: "", label: "Kỹ sư & kiến trúc sư" }, // [SUA]
+    { value: 95, suffix: "%", label: "Khách hàng giới thiệu lại" }, // [SUA]
   ],
 } as const;
 

@@ -21,29 +21,24 @@ export const metadata: Metadata = {
 
 const milestones = [
   {
-    year: "2014",
-    title: "Khởi đầu từ một xưởng thiết kế nhỏ",
-    text: "Ba kiến trúc sư và một kỹ sư kết cấu nhận những công trình nhà phố đầu tiên tại khu vực Gò Vấp và Tân Bình.",
-  },
-  {
-    year: "2017",
-    title: "Mở rộng sang thi công trọn gói",
-    text: "Sau nhiều lần chứng kiến bản vẽ bị thi công sai, chúng tôi quyết định tự đứng ra nhận cả phần thi công để kiểm soát chất lượng.",
-  },
-  {
-    year: "2020",
-    title: "Chuẩn hóa quy trình và hợp đồng",
-    text: "Ban hành bộ hợp đồng mẫu có bảng vật tư chi tiết theo thương hiệu và điều khoản ràng buộc tiến độ.",
-  },
-  {
     year: "2023",
-    title: "Mở rộng ra công trình công nghiệp",
-    text: "Thực hiện các nhà xưởng khung thép tiền chế tại Bình Dương, Long An và Đồng Nai.",
+    title: "Thành lập K3 Design",
+    text: "Một nhóm kiến trúc sư và kỹ sư kết cấu tách ra làm riêng, nhận những công trình nhà phố đầu tiên tại khu vực Gò Vấp và Tân Bình.",
+  },
+  {
+    year: "2024",
+    title: "Nhận thi công trọn gói",
+    text: "Sau nhiều lần chứng kiến bản vẽ bị thi công sai lệch, chúng tôi quyết định tự đứng ra nhận cả phần thi công để kiểm soát chất lượng đến cùng.",
+  },
+  {
+    year: "2025",
+    title: "Chuẩn hóa quy trình và hợp đồng",
+    text: "Ban hành bộ hợp đồng mẫu có bảng vật tư chi tiết theo thương hiệu, điều khoản ràng buộc tiến độ và quy trình nghiệm thu từng giai đoạn.",
   },
   {
     year: "2026",
-    title: "Hơn 250 công trình đã bàn giao",
-    text: "Đội ngũ 45 kỹ sư và kiến trúc sư, hoạt động ổn định tại TP.HCM và các tỉnh lân cận.",
+    title: "Hơn 20 công trình đã bàn giao",
+    text: "Đội ngũ 10 kỹ sư và kiến trúc sư, thực hiện công trình tại TP.HCM và các tỉnh lân cận như Long An, Bình Dương, Đồng Nai.",
   },
 ];
 
@@ -81,20 +76,20 @@ export default function AboutPage() {
               />
               <div className="mt-7 space-y-5 text-[1.0625rem] leading-relaxed text-ink-mid">
                 <p>
-                  Năm 2014, {site.name} là một xưởng thiết kế nhỏ. Chúng tôi vẽ,
-                  bàn giao hồ sơ, rồi chứng kiến nhiều bản vẽ bị thi công sai
-                  lệch đến mức không còn nhận ra. Chủ nhà thì kẹt ở giữa, không
-                  biết trách ai.
+                  Năm 2023, {site.name} bắt đầu như một xưởng thiết kế nhỏ.
+                  Chúng tôi vẽ, bàn giao hồ sơ, rồi chứng kiến nhiều bản vẽ bị
+                  thi công sai lệch đến mức không còn nhận ra. Chủ nhà thì kẹt ở
+                  giữa, không biết trách ai.
                 </p>
                 <p>
-                  Ba năm sau, chúng tôi quyết định nhận luôn phần thi công. Không
-                  phải để mở rộng doanh thu, mà vì đó là cách duy nhất để chịu
-                  trách nhiệm đến cùng cho thứ mình đã vẽ ra.
+                  Một năm sau, chúng tôi quyết định nhận luôn phần thi công.
+                  Không phải để mở rộng doanh thu, mà vì đó là cách duy nhất để
+                  chịu trách nhiệm đến cùng cho thứ mình đã vẽ ra.
                 </p>
                 <p>
-                  Đến nay đã hơn 250 công trình. Điều chúng tôi giữ nguyên từ
-                  ngày đầu là nguyên tắc: mọi con số phải nằm trên giấy trước khi
-                  máy trộn bê tông chạy.
+                  Đến nay là hơn 20 công trình. Con số chưa lớn, nhưng điều
+                  chúng tôi giữ nguyên từ ngày đầu là nguyên tắc: mọi con số phải
+                  nằm trên giấy trước khi máy trộn bê tông chạy.
                 </p>
               </div>
 
@@ -147,7 +142,7 @@ export default function AboutPage() {
         <Container>
           <SectionHeading
             eyebrow="Cột mốc"
-            title="Mười hai năm, từng bước một"
+            title="Ba năm, từng bước một"
           />
           <ol className="mt-14 space-y-0">
             {milestones.map((m, i) => (

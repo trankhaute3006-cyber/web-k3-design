@@ -41,7 +41,10 @@ export function Counter({
 
           const start = performance.now();
           const tick = (now: number) => {
-            const t = Math.min((now - start) / duration, 1);
+            // Chan duoi 0: moc thoi gian cua requestAnimationFrame co the som
+            // hon performance.now() goi ngay truoc do, khien t am va ham
+            // easing bac ba tra ve so am (hien thi "-4%").
+            const t = Math.min(Math.max((now - start) / duration, 0), 1);
             // ease-out
             const eased = 1 - Math.pow(1 - t, 3);
             setDisplay(Math.round(eased * value));

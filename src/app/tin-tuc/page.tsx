@@ -23,7 +23,7 @@ export default function NewsPage() {
       <PageHeader
         eyebrow="Tin tức"
         title="Kinh nghiệm từ công trường, không phải bài viết chuẩn SEO"
-        description="Những gì chúng tôi học được sau hơn 250 công trình, viết lại để anh chị dùng được ngay cả khi không làm việc với chúng tôi."
+        description="Những gì chúng tôi học được từ công trường, viết lại để anh chị dùng được ngay cả khi không làm việc với chúng tôi."
         breadcrumb={[{ label: "Trang chủ", href: "/" }, { label: "Tin tức" }]}
       />
 

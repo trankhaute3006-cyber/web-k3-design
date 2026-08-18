@@ -124,46 +124,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    slug: "can-ho-vinhomes",
-    title: "Căn hộ 92 m² Vinhomes",
-    category: "can-ho",
-    client: "Anh Quân & chị Linh",
-    location: "Bình Thạnh, TP.HCM",
-    year: 2024,
-    area: "92 m² — 3 phòng ngủ",
-    scope: "Thiết kế & thi công nội thất",
-    duration: "45 ngày",
-    cover: "/images/projects/can-ho-vinhomes-cover.svg",
-    gallery: [
-      {
-        src: "/images/projects/can-ho-vinhomes-1.svg",
-        caption: "Khu vực khách và bếp liên thông",
-      },
-      {
-        src: "/images/projects/can-ho-vinhomes-2.svg",
-        caption: "Tủ âm tường chạy suốt hành lang",
-      },
-      {
-        src: "/images/projects/can-ho-vinhomes-3.svg",
-        caption: "Phòng ngủ trẻ em có góc học tập",
-      },
-    ],
-    summary:
-      "Cải tạo nội thất căn hộ ba phòng ngủ cho gia đình trẻ, tối ưu lưu trữ mà không làm không gian nặng nề.",
-    challenge:
-      "Căn hộ bàn giao thô với mặt bằng chia nhỏ, phòng khách chỉ 18 m² nhưng gia chủ cần chỗ chứa lượng đồ đạc của gia đình bốn người.",
-    solution:
-      "Bỏ vách ngăn giữa bếp và phòng khách, dồn toàn bộ lưu trữ vào hệ tủ âm tường cao kịch trần chạy dọc hành lang. Bảng màu giới hạn ở ba tông sáng để không gian không bị vụn.",
-    result:
-      "Diện tích lưu trữ tăng khoảng 40% so với phương án tủ rời, khu vực sinh hoạt chung rộng hơn 6 m² so với mặt bằng gốc. Hoàn thiện trong 45 ngày.",
-    highlights: [
-      "Hệ tủ âm tường kịch trần tối ưu lưu trữ",
-      "Bếp và khách liên thông tăng diện tích cảm nhận",
-      "Vật liệu chống ẩm cho toàn bộ tủ khu vực bếp",
-    ],
-    featured: true,
-  },
-  {
     slug: "van-phong-cong-ty-tan-binh",
     title: "Văn phòng 600 m² Tân Bình",
     category: "thuong-mai",
@@ -197,7 +157,7 @@ export const projects: Project[] = [
       "Sáu buồng họp nhỏ giảm tải phòng họp lớn",
       "Hệ chiếu sáng theo tiêu chuẩn 400 lux mặt bàn",
     ],
-    featured: false,
+    featured: true,
   },
   {
     slug: "nha-pho-go-vap",
@@ -241,7 +201,7 @@ export const projects: Project[] = [
     category: "cong-nghiep",
     client: "Công ty CP Sản xuất Minh Long",
     location: "Bến Cát, Bình Dương",
-    year: 2023,
+    year: 2024,
     area: "2.400 m² xưởng + 300 m² văn phòng",
     scope: "Thiết kế + Thi công + Hoàn công",
     duration: "7 tháng",
@@ -277,7 +237,7 @@ export const projects: Project[] = [
     category: "biet-thu",
     client: "Gia đình anh Đức",
     location: "Bình Chánh, TP.HCM",
-    year: 2023,
+    year: 2024,
     area: "1 trệt 2 lầu — 510 m² sàn",
     scope: "Thiết kế kiến trúc + Giám sát",
     duration: "11 tháng",
@@ -313,7 +273,7 @@ export const projects: Project[] = [
     category: "thuong-mai",
     client: "Thương hiệu nội thất An Home",
     location: "Quận 7, TP.HCM",
-    year: 2023,
+    year: 2024,
     area: "380 m²",
     scope: "Thiết kế + Thi công hoàn thiện",
     duration: "3 tháng",
