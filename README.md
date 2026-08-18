@@ -28,7 +28,8 @@ Mở http://localhost:3000
 | `npm run build` | Build ra HTML tĩnh vào thư mục `out/` |
 | `npm run start` | Xem thử thư mục `out/` như trên máy chủ thật |
 | `npm run typecheck` | Kiểm tra lỗi kiểu dữ liệu TypeScript |
-| `npm run placeholders` | Tạo lại bộ ảnh minh họa SVG trong `public/images/` |
+| `npm run placeholders` | Tạo lại ảnh minh họa trong `public/images/` + ảnh chia sẻ link |
+| `npm run og` | Chỉ dựng lại `public/og-image.png` từ logo |
 
 ---
 
@@ -88,7 +89,7 @@ public/
 ├── logo.png                 # Logo chính thức (512×512, nền trong suốt)
 ├── apple-touch-icon.png     # Icon khi lưu ra màn hình chính (180×180)
 ├── favicon.svg              # Icon tab trình duyệt (rút gọn còn chữ K)
-└── og-image.svg             # Ảnh hiển thị khi chia sẻ link
+└── og-image.png             # Ảnh khi chia sẻ link (PHẢI là PNG — Zalo/FB không đọc SVG)
 ```
 
 ---

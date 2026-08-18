@@ -182,8 +182,7 @@ for (const slug of [
   add(`public/images/news/${slug}.svg`, 1200, 750, "ANH MINH HOA");
 }
 
-// OG image
-add("public/og-image.svg", 1200, 630, "K3 DESIGN — THIET KE & THI CONG");
+// Anh OG duoc dung rieng tu logo that trong scripts/build-og-image.mjs
 
 /* ---------- Ghi file ---------- */
 
