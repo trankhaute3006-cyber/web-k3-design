@@ -34,9 +34,14 @@ export type Project = {
 };
 
 /**
- * [SUA] Anh thay anh that vao thu muc /public/images/projects/
- * roi doi duong dan "cover" va "gallery" ben duoi.
- * Anh dang dung la placeholder SVG do he thong tao san.
+ * [SUA] Anh dang dung la PHOI CANH MINH HOA, khong phai anh chup cong trinh that.
+ *
+ * Khi co anh chup thuc te:
+ *   1. Dat anh vao /public/images/projects/ (nen dung .webp, rong ~1600px)
+ *   2. Doi duong dan "cover" va "gallery" ben duoi
+ *   3. Xoa <RenderNotice /> khoi 3 noi: src/app/du-an/page.tsx,
+ *      src/app/du-an/[slug]/page.tsx va src/components/home/FeaturedWork.tsx
+ *   4. Doi lai tieu de trang du an thanh "Cong trinh da ban giao"
  */
 export const projects: Project[] = [
   {

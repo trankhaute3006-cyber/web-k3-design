@@ -10,7 +10,9 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "placeholders": "node scripts/generate-placeholders.mjs && node scripts/build-og-image.mjs",
-    "og": "node scripts/build-og-image.mjs"
+    "og": "node scripts/build-og-image.mjs",
+    "images:ai": "python scripts/generate-project-images.py",
+    "images:sync": "node scripts/sync-project-images.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.544.0",

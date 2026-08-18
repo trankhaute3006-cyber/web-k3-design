@@ -18,6 +18,7 @@ import {
 import { Gallery } from "@/components/project/Gallery";
 import { ProjectCard } from "@/components/project/ProjectCard";
 import { Reveal } from "@/components/ui/Reveal";
+import { RenderNotice } from "@/components/ui/RenderNotice";
 import { CtaBand } from "@/components/home/CtaBand";
 
 type Params = { slug: string };
@@ -212,10 +213,11 @@ export default async function ProjectDetailPage({
       {/* Thu vien anh */}
       <Section tone="alt">
         <Container>
-          <h2 className="text-2xl">Hình ảnh công trình</h2>
+          <h2 className="text-2xl">Phối cảnh thiết kế</h2>
           <p className="mt-2.5 text-[0.9375rem] text-muted-fg">
             Bấm vào ảnh để xem kích thước lớn. Dùng phím mũi tên để chuyển ảnh.
           </p>
+          <RenderNotice className="mt-6 max-w-3xl" />
           <div className="mt-9">
             <Gallery images={project.gallery} projectTitle={project.title} />
           </div>

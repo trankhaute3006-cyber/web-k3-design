@@ -4,6 +4,7 @@ import { featuredProjects } from "@/data/projects";
 import { Container, Section, SectionHeading } from "@/components/ui/Primitives";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProjectCard } from "@/components/project/ProjectCard";
+import { RenderNotice } from "@/components/ui/RenderNotice";
 
 export function FeaturedWork() {
   return (
@@ -11,9 +12,9 @@ export function FeaturedWork() {
       <Container>
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            eyebrow="Công trình tiêu biểu"
+            eyebrow="Phong cách thiết kế"
             title="Mỗi công trình bắt đầu từ một bài toán cụ thể"
-            description="Chúng tôi ghi lại bài toán, cách giải và kết quả đo được của từng dự án — thay vì chỉ trưng ảnh đẹp."
+            description="Chúng tôi trình bày bài toán và cách giải của từng dự án — thay vì chỉ trưng phối cảnh đẹp."
           />
           <Link
             href="/du-an/"
@@ -28,7 +29,9 @@ export function FeaturedWork() {
           </Link>
         </div>
 
-        <div className="mt-14 grid gap-x-7 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+        <RenderNotice className="mt-10 max-w-3xl" />
+
+        <div className="mt-10 grid gap-x-7 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
           {featuredProjects.map((project, i) => (
             <Reveal key={project.slug} delay={i * 70}>
               <ProjectCard project={project} priority={i === 0} />
