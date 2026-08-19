@@ -23,11 +23,12 @@ export const site = {
   phone: "0981 442 079", // hotline hien thi tren giao dien
   phoneRaw: "+84981442079", // dang quoc te, dung cho nut goi va schema.org
   zalo: "0981442079", // so Zalo
-  email: "lienhe@k3design.vn", // [SUA]
-  address: "Số 00, Đường ABC, Phường XYZ, TP. Hồ Chí Minh", // [SUA]
+  email: "k3design2025@gmail.com",
+  address:
+    "26/10/2b Đường Làng Tăng Phú, Phường Tăng Nhơn Phú, TP. Hồ Chí Minh",
   addressShort: "TP. Hồ Chí Minh",
-  workingHours: "Thứ 2 – Thứ 7: 08:00 – 17:30",
-  taxCode: "0000000000", // [SUA] ma so thue
+  workingHours: "Thứ 2 – Thứ 7: 08:00 – 17:30", // [SUA] neu gio lam khac
+  taxCode: "0319293897",
 
   // Nhung link mang xa hoi de trong "" se tu dong an khoi giao dien
   social: {
@@ -38,9 +39,11 @@ export const site = {
   },
 
   // ---------- Ban do ----------
-  // [SUA] Vao Google Maps > Chia se > Nhung ban do > copy phan trong src="..."
+  // Ban do tim theo dia chi van phong o tren.
+  // [SUA] Neu Google chua ghim dung vi tri: mo Google Maps, tim dung diem,
+  // bam Chia se > Nhung ban do, copy phan trong src="..." roi dan vao day.
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Ho+Chi+Minh+City&output=embed",
+    "https://www.google.com/maps?q=26%2F10%2F2b%20%C4%90%C6%B0%E1%BB%9Dng%20L%C3%A0ng%20T%C4%83ng%20Ph%C3%BA%2C%20Ph%C6%B0%E1%BB%9Dng%20T%C4%83ng%20Nh%C6%A1n%20Ph%C3%BA%2C%20TP.%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vi%E1%BB%87t%20Nam&hl=vi&z=17&output=embed",
 
   // ---------- Form lien he ----------
   // Hostinger shared hosting KHONG chay Node server, nen form gui qua Web3Forms (mien phi).
