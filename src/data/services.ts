@@ -52,7 +52,7 @@ export const services: Service[] = [
       "Tư vấn vật liệu bền với khí hậu nóng ẩm Việt Nam",
       "Bảo hành đồ gỗ công nghiệp 24 tháng",
     ],
-    priceHint: "Từ 2.400.000 đ/m² sàn",
+    priceHint: "Thiết kế từ 160.000 đ/m² sàn",
   },
   {
     slug: "cai-tao-sua-chua",

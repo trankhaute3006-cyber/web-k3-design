@@ -149,10 +149,15 @@ export default function ServicesPage() {
                     </div>
                   </article>
 
-                  {/* Bang gia that — chi hien o hang muc thiet ke kien truc */}
+                  {/* Bang gia that — moi hang muc chi hien phan lien quan */}
                   {service.slug === "thiet-ke-kien-truc" ? (
                     <div className="mt-10 lg:mt-12">
-                      <DesignPricing />
+                      <DesignPricing view="kien-truc" />
+                    </div>
+                  ) : null}
+                  {service.slug === "thiet-ke-thi-cong-noi-that" ? (
+                    <div className="mt-10 lg:mt-12">
+                      <DesignPricing view="noi-that" />
                     </div>
                   ) : null}
                 </Reveal>

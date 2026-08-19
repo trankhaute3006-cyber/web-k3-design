@@ -2,9 +2,12 @@ import { Info, ArrowRight } from "lucide-react";
 import {
   areaBands,
   formatVnd,
+  inView,
+  interiorNote,
   packagePrices,
   pricingNote,
   unitPrices,
+  type PricingView,
 } from "@/data/pricing";
 import { Button } from "@/components/ui/Primitives";
 
@@ -15,22 +18,35 @@ const td = "px-4 py-4 align-middle text-[0.9375rem] text-ink-mid";
 const tdPrice =
   "tabular px-4 py-4 align-middle text-right font-display font-bold whitespace-nowrap text-accent";
 
-export function DesignPricing() {
+const COPY: Record<PricingView, { title: string; intro: string }> = {
+  "kien-truc": {
+    title: "Bảng giá thiết kế kiến trúc",
+    intro:
+      "Anh chị chọn một trong hai cách tính: theo mét vuông sàn, hoặc theo gói trọn gói cố định cho từng khoảng diện tích. Gói trọn gói thường có lợi hơn với công trình nhỏ và vừa.",
+  },
+  "noi-that": {
+    title: "Bảng giá thiết kế nội thất",
+    intro:
+      "Áp dụng cho nhà ở, căn hộ chung cư và mặt bằng kinh doanh ăn uống (FnB). Anh chị chọn tính theo mét vuông sàn, hoặc theo gói trọn gói cố định cho từng khoảng diện tích.",
+  },
+};
+
+export function DesignPricing({ view }: { view: PricingView }) {
+  const units = inView(unitPrices, view);
+  const packs = inView(packagePrices, view);
+  const copy = COPY[view];
+  const headingId = `bang-gia-${view}`;
+
   return (
     <section
-      aria-labelledby="bang-gia-thiet-ke"
+      aria-labelledby={headingId}
       className="rounded-3xl border border-line bg-surface p-6 sm:p-8 lg:p-10"
     >
-      <h3
-        id="bang-gia-thiet-ke"
-        className="text-[clamp(1.25rem,1rem+1vw,1.75rem)]"
-      >
-        Bảng giá thiết kế
+      <h3 id={headingId} className="text-[clamp(1.25rem,1rem+1vw,1.75rem)]">
+        {copy.title}
       </h3>
       <p className="mt-2.5 max-w-2xl text-[0.9375rem] leading-relaxed text-muted-fg">
-        Anh chị chọn một trong hai cách tính: theo mét vuông sàn, hoặc theo gói
-        trọn gói cố định cho từng khoảng diện tích. Gói trọn gói thường có lợi
-        hơn với công trình nhỏ và vừa.
+        {copy.intro}
       </p>
 
       {/* ---------- Bang 1: don gia theo m2 ---------- */}
@@ -40,7 +56,7 @@ export function DesignPricing() {
       </h4>
 
       <div className="mt-4 overflow-x-auto rounded-2xl border border-line">
-        <table className="w-full min-w-[36rem] border-collapse text-left">
+        <table className="w-full min-w-[34rem] border-collapse text-left">
           <caption className="sr-only">
             Đơn giá thiết kế tính theo mét vuông sàn
           </caption>
@@ -58,7 +74,7 @@ export function DesignPricing() {
             </tr>
           </thead>
           <tbody className="divide-y divide-line">
-            {unitPrices.map((row) => (
+            {units.map((row) => (
               <tr key={row.item} className="transition-colors hover:bg-canvas">
                 <th
                   scope="row"
@@ -86,7 +102,7 @@ export function DesignPricing() {
       </h4>
 
       <div className="mt-4 overflow-x-auto rounded-2xl border border-line">
-        <table className="w-full min-w-[44rem] border-collapse text-left">
+        <table className="w-full min-w-[42rem] border-collapse text-left">
           <caption className="sr-only">
             Giá gói thiết kế trọn gói theo từng khoảng diện tích, đơn vị đồng
           </caption>
@@ -106,7 +122,7 @@ export function DesignPricing() {
             </tr>
           </thead>
           <tbody className="divide-y divide-line">
-            {packagePrices.map((row) => (
+            {packs.map((row) => (
               <tr key={row.name} className="transition-colors hover:bg-canvas">
                 <th
                   scope="row"
@@ -139,19 +155,32 @@ export function DesignPricing() {
 
       {/* ---------- Ghi chu + CTA ---------- */}
 
-      <div className="mt-8 flex flex-col gap-6 border-t border-line pt-7 lg:flex-row lg:items-center lg:justify-between">
-        <p className="flex max-w-2xl items-start gap-2.5 text-sm leading-relaxed text-ink-mid">
-          <Info
-            size={17}
-            className="mt-0.5 shrink-0 text-accent"
-            aria-hidden="true"
-          />
-          <span>{pricingNote}</span>
-        </p>
-        <Button href="/lien-he/" className="shrink-0">
-          Nhận báo giá chi tiết
-          <ArrowRight size={17} aria-hidden="true" />
-        </Button>
+      <div className="mt-8 space-y-3 border-t border-line pt-7">
+        {view === "noi-that" ? (
+          <p className="flex max-w-3xl items-start gap-2.5 text-sm leading-relaxed text-ink-mid">
+            <Info
+              size={17}
+              className="mt-0.5 shrink-0 text-accent"
+              aria-hidden="true"
+            />
+            <span>{interiorNote}</span>
+          </p>
+        ) : null}
+
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <p className="flex max-w-2xl items-start gap-2.5 text-sm leading-relaxed text-ink-mid">
+            <Info
+              size={17}
+              className="mt-0.5 shrink-0 text-accent"
+              aria-hidden="true"
+            />
+            <span>{pricingNote}</span>
+          </p>
+          <Button href="/lien-he/" className="shrink-0">
+            Nhận báo giá chi tiết
+            <ArrowRight size={17} aria-hidden="true" />
+          </Button>
+        </div>
       </div>
     </section>
   );
