@@ -37,7 +37,9 @@ export const services: Service[] = [
       "Giám sát trưởng bám công trình, báo cáo hình ảnh hằng tuần",
       "Cam kết tiến độ, có điều khoản phạt chậm trong hợp đồng",
     ],
-    priceHint: "Từ 5.800.000 đ/m² sàn",
+    // Khao sat thi truong TP.HCM 8/2026: goi co ban 6,0-6,5tr; goi kha 7,0-7,5tr;
+    // goi cao cap 10-12tr d/m2 san. Lay muc vao cua goi co ban.
+    priceHint: "Từ 6.000.000 đ/m² sàn",
   },
   {
     slug: "thiet-ke-thi-cong-noi-that",
@@ -67,7 +69,9 @@ export const services: Service[] = [
       "Xử lý triệt để thấm dột, nứt tường, xuống cấp sàn",
       "Thi công gọn, che chắn và vệ sinh sau mỗi ngày làm việc",
     ],
-    priceHint: "Báo giá theo khảo sát thực tế",
+    // Khao sat thi truong TP.HCM 8/2026: cai tao nha pho pho bien 3-5tr d/m2;
+    // rieng hang muc cai tao co ban 2,55-3,55tr. Lay muc vao 3tr.
+    priceHint: "Từ 3.000.000 đ/m² sàn",
   },
   {
     slug: "giam-sat-quan-ly-du-an",
@@ -82,7 +86,9 @@ export const services: Service[] = [
       "Báo cáo tiến độ và rủi ro định kỳ",
       "Kiểm soát biến động chi phí phát sinh",
     ],
-    priceHint: "Từ 3% giá trị hợp đồng thi công",
+    // Dinh muc theo Thong tu 12/2021/TT-BXD: chi phi giam sat thi cong tinh
+    // bang 2-3,5% chi phi xay dung chua VAT trong du toan goi thau.
+    priceHint: "2 – 3,5% giá trị hợp đồng thi công",
   },
   {
     slug: "xin-phep-xay-dung",
@@ -97,7 +103,9 @@ export const services: Service[] = [
       "Tư vấn chỉ giới, mật độ và chiều cao được phép",
       "Đại diện làm việc với cơ quan cấp phép",
     ],
-    priceHint: "Trọn gói theo quy mô công trình",
+    // Khao sat thi truong TP.HCM 8/2026: dich vu xin phep tron goi 5-15tr/ho so.
+    // Le phi nha nuoc cap phep nha o rieng le tai TP.HCM: 75.000 d.
+    priceHint: "Từ 5.000.000 đ/hồ sơ",
   },
 ];
 
