@@ -36,11 +36,6 @@ export const mainNav: NavItem[] = [
         href: "/quy-trinh/",
         hint: "Sáu bước từ khảo sát đến bảo hành",
       },
-      {
-        label: "Tin tức & kinh nghiệm",
-        href: "/tin-tuc/",
-        hint: "Ghi chép từ công trường",
-      },
     ],
   },
   {
@@ -67,6 +62,7 @@ export const mainNav: NavItem[] = [
       { label: "Xem tất cả dự án", href: "/du-an/" },
     ],
   },
+  { label: "Tin tức", href: "/tin-tuc/" },
   { label: "Liên hệ", href: "/lien-he/" },
 ];
 
