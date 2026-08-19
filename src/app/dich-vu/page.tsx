@@ -22,6 +22,7 @@ import {
 import { Reveal } from "@/components/ui/Reveal";
 import { Faq } from "@/components/ui/Faq";
 import { CtaBand } from "@/components/home/CtaBand";
+import { DesignPricing } from "@/components/pricing/DesignPricing";
 
 export const metadata: Metadata = {
   title: "Dịch vụ thiết kế & thi công",
@@ -147,6 +148,13 @@ export default function ServicesPage() {
                       </ul>
                     </div>
                   </article>
+
+                  {/* Bang gia that — chi hien o hang muc thiet ke kien truc */}
+                  {service.slug === "thiet-ke-kien-truc" ? (
+                    <div className="mt-10 lg:mt-12">
+                      <DesignPricing />
+                    </div>
+                  ) : null}
                 </Reveal>
               );
             })}

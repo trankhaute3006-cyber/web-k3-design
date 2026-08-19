@@ -22,7 +22,7 @@ export const services: Service[] = [
       "Hồ sơ kỹ thuật thi công đầy đủ: kiến trúc, kết cấu, M&E",
       "Hồ sơ xin phép xây dựng theo quy định địa phương",
     ],
-    priceHint: "Từ 180.000 đ/m² sàn",
+    priceHint: "Từ 210.000 đ/m² sàn",
   },
   {
     slug: "thi-cong-tron-goi",
