@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { SearchX } from "lucide-react";
 import {
   categoryLabels,
@@ -15,6 +15,33 @@ type Filter = "all" | ProjectCategory;
 
 export function ProjectBrowser({ projects }: { projects: Project[] }) {
   const [filter, setFilter] = useState<Filter>("all");
+
+  /**
+   * Dong bo bo loc voi dia chi: /du-an/#nha-pho
+   * Nho vay menu xo xuong o thanh dieu huong tro thang vao tung nhom duoc,
+   * va nguoi dung copy link gui di van giu nguyen bo loc.
+   */
+  useEffect(() => {
+    const applyFromHash = () => {
+      const raw = decodeURIComponent(window.location.hash.replace("#", ""));
+      if (raw && raw in categoryLabels) {
+        setFilter(raw as ProjectCategory);
+      } else if (!raw) {
+        setFilter("all");
+      }
+    };
+    applyFromHash();
+    window.addEventListener("hashchange", applyFromHash);
+    return () => window.removeEventListener("hashchange", applyFromHash);
+  }, []);
+
+  // Doi bo loc thi cap nhat dia chi, nhung khong them vao lich su duyet
+  const changeFilter = useCallback((next: Filter) => {
+    setFilter(next);
+    const url =
+      window.location.pathname + (next === "all" ? "" : `#${next}`);
+    window.history.replaceState(null, "", url);
+  }, []);
 
   // Chi hien nhung nhom thuc su co du an
   const tabs = useMemo(() => {
@@ -59,7 +86,7 @@ export function ProjectBrowser({ projects }: { projects: Project[] }) {
                 role="tab"
                 type="button"
                 aria-selected={active}
-                onClick={() => setFilter(tab.key)}
+                onClick={() => changeFilter(tab.key)}
                 className={cn(
                   "inline-flex min-h-12 cursor-pointer items-center gap-2 rounded-full border px-5 font-display text-[0.9375rem] font-medium transition-[background-color,border-color,color] duration-200",
                   active
@@ -111,7 +138,7 @@ export function ProjectBrowser({ projects }: { projects: Project[] }) {
             năng lực chi tiết.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Button variant="secondary" onClick={() => setFilter("all")}>
+            <Button variant="secondary" onClick={() => changeFilter("all")}>
               Xem tất cả dự án
             </Button>
             <Button href="/lien-he/">Liên hệ tư vấn</Button>

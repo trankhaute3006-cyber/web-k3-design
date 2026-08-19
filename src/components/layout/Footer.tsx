@@ -2,7 +2,7 @@ import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, Facebook, Youtube, Instagram } from "lucide-react";
 import { site } from "@/data/site";
 import { services } from "@/data/services";
-import { mainNav } from "@/data/nav";
+import { flatNav } from "@/data/nav";
 import { Container } from "@/components/ui/Primitives";
 import { Logo } from "@/components/layout/Logo";
 import { telHref } from "@/lib/utils";
@@ -74,7 +74,7 @@ export function Footer() {
                 Khám phá
               </h2>
               <ul className="mt-5 space-y-1">
-                {mainNav.slice(1).map((item) => (
+                {flatNav.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}

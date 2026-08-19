@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Home, Phone } from "lucide-react";
 import { site } from "@/data/site";
-import { mainNav } from "@/data/nav";
+import { flatNav } from "@/data/nav";
 import { Button, Container } from "@/components/ui/Primitives";
 import { telHref } from "@/lib/utils";
 
@@ -42,7 +42,7 @@ export default function NotFound() {
 
         <nav aria-label="Các trang chính" className="mt-14">
           <ul className="flex flex-wrap justify-center gap-x-7 gap-y-3">
-            {mainNav.slice(1).map((item) => (
+            {flatNav.map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}
