@@ -7,6 +7,7 @@ import {
   Ruler,
   Wrench,
   ClipboardCheck,
+  SprayCan,
   Check,
   ArrowRight,
 } from "lucide-react";
@@ -23,6 +24,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Faq } from "@/components/ui/Faq";
 import { CtaBand } from "@/components/home/CtaBand";
 import { DesignPricing } from "@/components/pricing/DesignPricing";
+import { CleaningPricing } from "@/components/pricing/CleaningPricing";
 
 export const metadata: Metadata = {
   title: "Dịch vụ thiết kế & thi công",
@@ -38,6 +40,7 @@ const iconMap = {
   ruler: Ruler,
   wrench: Wrench,
   clipboard: ClipboardCheck,
+  spray: SprayCan,
 } as const;
 
 export default function ServicesPage() {
@@ -158,6 +161,11 @@ export default function ServicesPage() {
                   {service.slug === "thiet-ke-thi-cong-noi-that" ? (
                     <div className="mt-10 lg:mt-12">
                       <DesignPricing view="noi-that" />
+                    </div>
+                  ) : null}
+                  {service.slug === "ve-sinh-cong-nghiep" ? (
+                    <div className="mt-10 lg:mt-12">
+                      <CleaningPricing />
                     </div>
                   ) : null}
                 </Reveal>

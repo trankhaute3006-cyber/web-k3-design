@@ -6,6 +6,7 @@ import {
   Ruler,
   Wrench,
   ClipboardCheck,
+  SprayCan,
   ArrowRight,
 } from "lucide-react";
 import { services, type Service } from "@/data/services";
@@ -19,6 +20,7 @@ const iconMap = {
   ruler: Ruler,
   wrench: Wrench,
   clipboard: ClipboardCheck,
+  spray: SprayCan,
 } as const;
 
 function ServiceItem({ service, index }: { service: Service; index: number }) {

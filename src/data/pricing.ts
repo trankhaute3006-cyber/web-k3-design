@@ -116,3 +116,38 @@ export const interiorNote =
 export function formatVnd(n: number) {
   return n.toLocaleString("vi-VN");
 }
+
+/* ================================================================
+   BANG GIA VE SINH CONG NGHIEP — so lieu that do K3 Design cung cap
+   ================================================================ */
+
+export type FloorCleaning = {
+  item: string;
+  min: number;
+  max: number;
+  note: string;
+};
+
+export const floorCleaning: FloorCleaning[] = [
+  {
+    item: "Vệ sinh sàn",
+    min: 13_000,
+    max: 15_000,
+    note: "Chà sàn bằng máy công nghiệp, tẩy vữa và keo bám",
+  },
+];
+
+/** Kinh nha cao tang: gia phan theo do cao va mat trong / mat ngoai */
+export type GlassCleaning = {
+  height: string;
+  outside: number;
+  inside: number;
+};
+
+export const glassCleaning: GlassCleaning[] = [
+  { height: "Trên 4 m", outside: 20_000, inside: 20_000 },
+  { height: "Dưới 4 m", outside: 10_000, inside: 10_000 },
+];
+
+export const cleaningNote =
+  "Đơn giá tham khảo theo mét vuông, chốt chính xác sau khi khảo sát hiện trạng và khối lượng thực tế. Công trình bám bẩn nặng sau xây dựng được báo giá riêng.";

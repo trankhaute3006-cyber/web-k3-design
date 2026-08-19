@@ -1,6 +1,13 @@
 export type Service = {
   slug: string;
-  icon: "drafting" | "hardhat" | "sofa" | "ruler" | "wrench" | "clipboard";
+  icon:
+    | "drafting"
+    | "hardhat"
+    | "sofa"
+    | "ruler"
+    | "wrench"
+    | "clipboard"
+    | "spray";
   title: string;
   short: string;
   description: string;
@@ -106,6 +113,22 @@ export const services: Service[] = [
     // Khao sat thi truong TP.HCM 8/2026: dich vu xin phep tron goi 5-15tr/ho so.
     // Le phi nha nuoc cap phep nha o rieng le tai TP.HCM: 75.000 d.
     priceHint: "Từ 5.000.000 đ/hồ sơ",
+  },
+  {
+    slug: "ve-sinh-cong-nghiep",
+    icon: "spray",
+    title: "Vệ sinh công nghiệp",
+    short: "Làm sạch sau thi công và vệ sinh định kỳ cho công trình đã sử dụng.",
+    description:
+      "Công trình vừa xây xong vẫn còn vữa, keo silicon và vết sơn bám chặt trên sàn và kính — chổi với nước lau nhà thông thường không xử lý được. Chúng tôi làm sạch bằng máy chà sàn công nghiệp, và với phần kính trên cao thì dùng dây chuyên dụng để tiếp cận từ bên ngoài.",
+    bullets: [
+      "Vệ sinh sau xây dựng: bóc keo, tẩy vữa, xi măng và sơn bám trên bề mặt",
+      "Chà sàn bằng máy công nghiệp, đánh bóng đá granite và sàn bê tông mài",
+      "Vệ sinh kính nhà cao tầng cả mặt trong lẫn mặt ngoài",
+      "Thi công trên cao bằng dây chuyên dụng, tuân thủ quy trình an toàn lao động",
+      "Nhận vệ sinh định kỳ theo tháng hoặc quý cho văn phòng, showroom, nhà xưởng",
+    ],
+    priceHint: "Từ 10.000 đ/m²",
   },
 ];
 
