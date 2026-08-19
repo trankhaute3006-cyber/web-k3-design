@@ -150,10 +150,12 @@ export function ContactForm() {
       return;
     }
 
+    // Chua co access key thi khong gui duoc. Tuyet doi khong hien loi ky thuat
+    // cho khach — chuyen ho sang goi dien / Zalo de khong mat lien he.
     if (!configured) {
       setStatus("failed");
       setServerMessage(
-        "Form chưa được cấu hình. Vui lòng lấy access key miễn phí tại web3forms.com rồi điền vào src/data/site.ts."
+        "Hiện chúng tôi chưa nhận yêu cầu qua biểu mẫu. Anh chị vui lòng gọi hoặc nhắn Zalo trực tiếp giúp chúng tôi theo số"
       );
       return;
     }
