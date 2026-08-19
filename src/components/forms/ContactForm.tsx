@@ -118,7 +118,10 @@ export function ContactForm() {
   );
   const [serverMessage, setServerMessage] = useState("");
 
-  const configured = Boolean(site.web3formsKey);
+  // "php"  -> gui ve public/contact.php tren Hostinger (khong can dang ky gi)
+  // khac   -> gui qua Web3Forms, can access key
+  const usePhp = site.formMode === "php";
+  const configured = usePhp || Boolean(site.web3formsKey);
 
   // Kiem tra khi roi khoi o nhap, khong kiem tra tung phim go
   const handleBlur = (e: {
@@ -164,22 +167,44 @@ export function ContactForm() {
     setServerMessage("");
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const honeypot = String(data.get("website") ?? "");
+
+      const endpoint = usePhp
+        ? site.phpEndpoint
+        : "https://api.web3forms.com/submit";
+
+      const payload = usePhp
+        ? {
+            // Ten truong phai khop voi public/contact.php
+            name: data.get("name"),
+            phone: data.get("phone"),
+            email: data.get("email"),
+            service: data.get("service"),
+            location: data.get("location"),
+            area: data.get("area"),
+            budget: data.get("budget"),
+            message: data.get("message"),
+            website: honeypot,
+          }
+        : {
+            access_key: site.web3formsKey,
+            subject: `[${site.name}] Yêu cầu tư vấn mới từ ${data.get("name")}`,
+            from_name: site.name,
+            botcheck: honeypot,
+            "Họ và tên": data.get("name"),
+            "Số điện thoại": data.get("phone"),
+            Email: data.get("email") || "(không cung cấp)",
+            "Dịch vụ quan tâm": data.get("service"),
+            "Địa điểm công trình": data.get("location") || "(chưa cung cấp)",
+            "Diện tích dự kiến": data.get("area") || "(chưa cung cấp)",
+            "Ngân sách dự kiến": data.get("budget") || "(chưa xác định)",
+            "Nội dung": data.get("message"),
+          };
+
+      const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          access_key: site.web3formsKey,
-          subject: `[${site.name}] Yêu cầu tư vấn mới từ ${data.get("name")}`,
-          from_name: site.name,
-          "Họ và tên": data.get("name"),
-          "Số điện thoại": data.get("phone"),
-          Email: data.get("email") || "(không cung cấp)",
-          "Dịch vụ quan tâm": data.get("service"),
-          "Địa điểm công trình": data.get("location") || "(chưa cung cấp)",
-          "Diện tích dự kiến": data.get("area") || "(chưa cung cấp)",
-          "Ngân sách dự kiến": data.get("budget") || "(chưa xác định)",
-          "Nội dung": data.get("message"),
-        }),
+        body: JSON.stringify(payload),
       });
 
       const json = await res.json();
@@ -244,6 +269,19 @@ export function ContactForm() {
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} noValidate className="space-y-6">
+      {/* Bay bot: o nay an voi nguoi that. Bot tu dong dien moi o nen se lo,
+          may chu thay o nay co noi dung thi bo qua yeu cau do. */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+        <label htmlFor="website">Để trống ô này</label>
+        <input
+          id="website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
+
       {/* Tom tat loi — co the bam de nhay toi o sai */}
       {errorList.length > 1 ? (
         <div
@@ -452,6 +490,15 @@ export function ContactForm() {
           form chưa gửi được vì chưa có access key. Lấy key miễn phí tại
           web3forms.com và điền vào <code className="text-ink">site.web3formsKey</code>{" "}
           trong <code className="text-ink">src/data/site.ts</code>.
+        </p>
+      ) : null}
+
+      {usePhp && process.env.NODE_ENV === "development" ? (
+        <p className="rounded-2xl border border-line-strong bg-accent-soft p-4 text-sm text-muted-fg">
+          <strong className="font-semibold text-ink">Chỉ hiện khi chạy thử ở máy:</strong>{" "}
+          form gửi tới <code className="text-ink">/contact.php</code>, mà máy này
+          không chạy PHP nên bấm gửi sẽ báo lỗi. Sau khi đưa lên Hostinger thì
+          form hoạt động bình thường.
         </p>
       ) : null}
 

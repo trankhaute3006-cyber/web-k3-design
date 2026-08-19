@@ -46,9 +46,24 @@ export const site = {
     "https://www.google.com/maps?q=26%2F10%2F2b%20%C4%90%C6%B0%E1%BB%9Dng%20L%C3%A0ng%20T%C4%83ng%20Ph%C3%BA%2C%20Ph%C6%B0%E1%BB%9Dng%20T%C4%83ng%20Nh%C6%A1n%20Ph%C3%BA%2C%20TP.%20H%E1%BB%93%20Ch%C3%AD%20Minh%2C%20Vi%E1%BB%87t%20Nam&hl=vi&z=17&output=embed",
 
   // ---------- Form lien he ----------
-  // Hostinger shared hosting KHONG chay Node server, nen form gui qua Web3Forms (mien phi).
-  // [SUA] Lay access key mien phi tai https://web3forms.com (nhap email -> nhan key qua mail)
-  // Tam de trong "" thi form se hien thong bao huong dan thay vi bao loi.
+  //
+  // Website la HTML tinh nen khong tu gui mail duoc. Co hai cach:
+  //
+  //   "php"       — MAC DINH. Dung file public/contact.php chay tren
+  //                 Hostinger. Khong can dang ky dich vu nao, mail ve
+  //                 thang hop thu ghi trong contact.php.
+  //                 Chi chay tren may chu that, khong chay o localhost.
+  //
+  //   "web3forms" — Dung dich vu ngoai. Can vao web3forms.com lay access
+  //                 key mien phi roi dien vao web3formsKey ben duoi.
+  //                 Chon cach nay neu mail qua PHP hay bi vao spam.
+  //
+  formMode: "php" as "php" | "web3forms",
+
+  /** Duong dan toi file PHP nhan form (chi dung khi formMode = "php") */
+  phpEndpoint: "/contact.php",
+
+  /** [SUA] Chi can khi formMode = "web3forms" */
   web3formsKey: "",
 
   // ---------- Do luong ----------

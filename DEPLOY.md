@@ -187,26 +187,54 @@ gallery: [
 
 ---
 
-## Phần 8 — Bật form liên hệ
+## Phần 8 — Form liên hệ: nhận yêu cầu của khách
 
-Vì Hostinger gói shared không chạy được Node.js, form gửi qua dịch vụ Web3Forms
-(miễn phí, không giới hạn số lượt cho mức cơ bản).
+Website là HTML tĩnh nên tự nó không gửi mail được. Đã dựng sẵn **hai cách**,
+chọn một.
 
-1. Vào https://web3forms.com
-2. Nhập email nhận thông báo → bấm **Create Access Key**
-3. Kiểm tra hộp thư, copy access key
-4. Mở `src/data/site.ts`, dán vào:
+### Cách A — Dùng PHP trên Hostinger (đang bật sẵn, không cần đăng ký gì)
 
-```ts
-web3formsKey: "dan-access-key-vao-day",
+File `public/contact.php` chạy trên máy chủ Hostinger và gửi mail thẳng về
+`k3design2025@gmail.com`. Không cần tài khoản dịch vụ nào.
+
+**Anh không phải làm gì cả** — chỉ cần deploy như Phần 4. Sau khi lên,
+mở trang Liên hệ, tự gửi thử một yêu cầu rồi kiểm tra hộp thư.
+
+Muốn đổi hộp thư nhận, sửa dòng này trong `public/contact.php`:
+
+```php
+$TO = 'k3design2025@gmail.com';
 ```
 
-5. `git add . && git commit -m "Bat form lien he" && git push`
+> **Lưu ý:** form này **không chạy khi thử ở máy** (`npm run dev`) vì máy
+> không có PHP. Bấm gửi sẽ báo lỗi. Đó là bình thường.
 
-Trước khi có key, form vẫn hiển thị bình thường và báo rõ cho quản trị viên,
-nhưng chưa gửi được.
+**Nếu mail bị rơi vào Spam:** mở email đó bấm "Không phải spam" và thêm
+địa chỉ gửi vào danh bạ. Nếu vẫn bị, chuyển sang Cách B.
 
----
+### Cách B — Dùng Web3Forms (nếu Cách A hay vào Spam)
+
+1. Vào https://web3forms.com, nhập `k3design2025@gmail.com`, bấm Create Access Key
+2. Mở hộp thư, copy chuỗi key nhận được
+3. Sửa `src/data/site.ts`:
+
+```ts
+formMode: "web3forms" as "php" | "web3forms",
+web3formsKey: "dan-key-vao-day",
+```
+
+4. `git add . && git commit -m "Doi sang Web3Forms" && git push`
+
+Gói miễn phí 250 lượt/tháng.
+
+### Chống spam đã có sẵn
+
+- **Bẫy bot**: form có một ô ẩn tên `website`. Người thật không thấy nó,
+  bot tự động điền mọi ô nên sẽ lộ. Máy chủ thấy ô này có nội dung thì bỏ
+  qua yêu cầu, không gửi mail.
+- **Giới hạn 20 yêu cầu/giờ** từ cùng một địa chỉ IP.
+- **Chặn chèn header mail**: mọi ký tự xuống dòng bị loại khỏi tiêu đề và
+  địa chỉ gửi, tránh bị lợi dụng để phát tán thư rác.
 
 ## Phần 9 — Cách deploy thủ công (khi không muốn dùng GitHub Actions)
 
