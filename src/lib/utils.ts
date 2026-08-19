@@ -8,7 +8,7 @@ export function formatDate(iso: string) {
   return `${d} tháng ${m}, ${y}`;
 }
 
-/** 0900 000 000 -> tel:+84900000000 an toan */
+/** "0981 442 079" -> "tel:+84981442079" — bo khoang trang, giu dau + */
 export function telHref(raw: string) {
   return `tel:${raw.replace(/[^\d+]/g, "")}`;
 }

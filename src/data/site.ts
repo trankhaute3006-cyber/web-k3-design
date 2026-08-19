@@ -20,9 +20,9 @@ export const site = {
   locale: "vi_VN",
 
   // ---------- Lien he ----------
-  phone: "0900 000 000", // [SUA] hotline that
-  phoneRaw: "+84900000000", // [SUA] dang quoc te, dung cho nut goi
-  zalo: "0900000000", // [SUA] so Zalo
+  phone: "0981 442 079", // hotline hien thi tren giao dien
+  phoneRaw: "+84981442079", // dang quoc te, dung cho nut goi va schema.org
+  zalo: "0981442079", // so Zalo
   email: "lienhe@k3design.vn", // [SUA]
   address: "Số 00, Đường ABC, Phường XYZ, TP. Hồ Chí Minh", // [SUA]
   addressShort: "TP. Hồ Chí Minh",
