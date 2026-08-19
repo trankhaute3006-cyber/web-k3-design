@@ -9,6 +9,9 @@ import {
   ClipboardCheck,
   SprayCan,
   Check,
+  CalendarClock,
+  UserCheck,
+  MinusCircle,
   ArrowRight,
 } from "lucide-react";
 import { services } from "@/data/services";
@@ -111,6 +114,22 @@ export default function ServicesPage() {
                           Con số cuối cùng phụ thuộc quy mô, mức hoàn thiện và
                           điều kiện hiện trạng — được chốt sau buổi khảo sát.
                         </p>
+
+                        <div className="mt-6 flex items-start gap-2.5 border-t border-line pt-5">
+                          <CalendarClock
+                            size={17}
+                            className="mt-0.5 shrink-0 text-accent"
+                            aria-hidden="true"
+                          />
+                          <span className="text-sm leading-snug">
+                            <span className="block font-display text-xs font-semibold tracking-[0.12em] text-muted-fg uppercase">
+                              Thời gian thực hiện
+                            </span>
+                            <span className="mt-0.5 block font-display font-semibold text-ink">
+                              {service.duration}
+                            </span>
+                          </span>
+                        </div>
                         <Button
                           href="/lien-he/"
                           className="mt-6 w-full"
@@ -127,9 +146,12 @@ export default function ServicesPage() {
                       <h2 className="text-[clamp(1.5rem,1.1rem+1.6vw,2.25rem)]">
                         {service.title}
                       </h2>
-                      <p className="mt-4 text-[1.0625rem] leading-relaxed text-ink-mid">
-                        {service.description}
-                      </p>
+                      <div className="mt-4 space-y-4 text-[1.0625rem] leading-relaxed text-ink-mid">
+                        <p>{service.description}</p>
+                        {service.detail.map((para) => (
+                          <p key={para.slice(0, 40)}>{para}</p>
+                        ))}
+                      </div>
 
                       <h3 className="mt-9 font-display text-sm font-semibold tracking-[0.14em] text-muted-fg uppercase">
                         Anh chị nhận được gì
@@ -149,6 +171,50 @@ export default function ServicesPage() {
                           </li>
                         ))}
                       </ul>
+
+                      <div className="mt-9 grid gap-6 sm:grid-cols-2">
+                        <div className="rounded-2xl border border-line bg-surface p-6">
+                          <h3 className="flex items-center gap-2 font-display text-sm font-semibold tracking-[0.12em] text-muted-fg uppercase">
+                            <UserCheck size={16} className="text-accent" aria-hidden="true" />
+                            Phù hợp với
+                          </h3>
+                          <ul className="mt-4 space-y-2.5">
+                            {service.suitableFor.map((item) => (
+                              <li
+                                key={item}
+                                className="flex gap-2.5 text-[0.9375rem] leading-relaxed text-ink-mid"
+                              >
+                                <span
+                                  className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                                  aria-hidden="true"
+                                />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="rounded-2xl border border-line bg-canvas-alt p-6">
+                          <h3 className="flex items-center gap-2 font-display text-sm font-semibold tracking-[0.12em] text-muted-fg uppercase">
+                            <MinusCircle size={16} className="text-muted-fg" aria-hidden="true" />
+                            Không bao gồm
+                          </h3>
+                          <ul className="mt-4 space-y-2.5">
+                            {service.notIncluded.map((item) => (
+                              <li
+                                key={item}
+                                className="flex gap-2.5 text-[0.9375rem] leading-relaxed text-muted-fg"
+                              >
+                                <span
+                                  className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-line-strong"
+                                  aria-hidden="true"
+                                />
+                                {item}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </article>
 
