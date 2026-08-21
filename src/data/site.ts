@@ -32,7 +32,8 @@ export const site = {
 
   // Nhung link mang xa hoi de trong "" se tu dong an khoi giao dien
   social: {
-    facebook: "https://facebook.com/k3design", // [SUA]
+    // [SUA] Khi co trang that thi dan link vao. De trong thi icon tu an di.
+    facebook: "",
     youtube: "", // [SUA]
     tiktok: "", // [SUA]
     instagram: "", // [SUA]
