@@ -6,6 +6,7 @@ import { site } from "@/data/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingContact } from "@/components/layout/FloatingContact";
+import { graph, jsonLdProps, organizationSchema } from "@/lib/schema";
 
 const archivo = Archivo({
   subsets: ["latin", "vietnamese"],
@@ -80,54 +81,24 @@ export const viewport: Viewport = {
   themeColor: "#002e6e",
 };
 
-/** Du lieu co cau truc cho Google */
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "GeneralContractor",
-      "@id": `${site.url}/#organization`,
-      name: site.legalName,
-      alternateName: site.name,
-      url: site.url,
-      description: site.description,
-      telephone: site.phoneRaw,
-      email: site.email,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: site.address,
-        addressLocality: site.addressShort,
-        addressCountry: "VN",
-      },
-      areaServed: [
-        { "@type": "AdministrativeArea", name: "TP. Hồ Chí Minh" },
-        { "@type": "AdministrativeArea", name: "Bình Dương" },
-        { "@type": "AdministrativeArea", name: "Long An" },
-        { "@type": "AdministrativeArea", name: "Đồng Nai" },
-      ],
-      priceRange: "$$",
-      sameAs: Object.values(site.social).filter(Boolean),
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${site.url}/#website`,
-      url: site.url,
-      name: site.name,
-      inLanguage: "vi-VN",
-      publisher: { "@id": `${site.url}/#organization` },
-    },
-  ],
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="vi" className={`${archivo.variable} ${beVietnam.variable}`}>
       <body>
+        {/* Doanh nghiep + website: dung chung cho moi trang */}
         <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          {...jsonLdProps(
+            graph(organizationSchema(), {
+              "@type": "WebSite",
+              "@id": `${site.url}/#website`,
+              url: site.url,
+              name: site.name,
+              inLanguage: "vi-VN",
+              publisher: { "@id": `${site.url}/#organization` },
+            })
+          )}
         />
 
         <Header />

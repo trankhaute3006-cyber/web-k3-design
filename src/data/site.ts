@@ -39,6 +39,17 @@ export const site = {
     instagram: "", // [SUA]
   },
 
+  // ---------- Toa do van phong ----------
+  // [SUA] Rat quan trong voi tim kiem dia phuong ("xay nha gan toi").
+  // Cach lay: mo Google Maps, bam chuot phai dung vi tri van phong,
+  // dong so dau tien hien ra la vi do, so thu hai la kinh do.
+  // Vi du: 10.845123, 106.775456  ->  lat: "10.845123", lng: "106.775456"
+  // De trong thi phan toa do tu dong bi bo qua, khong bao loi.
+  geo: {
+    lat: "",
+    lng: "",
+  },
+
   // ---------- Ban do ----------
   // Ban do tim theo dia chi van phong o tren.
   // [SUA] Neu Google chua ghim dung vi tri: mo Google Maps, tim dung diem,

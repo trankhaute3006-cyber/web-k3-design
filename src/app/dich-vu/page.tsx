@@ -28,6 +28,13 @@ import { Faq } from "@/components/ui/Faq";
 import { CtaBand } from "@/components/home/CtaBand";
 import { DesignPricing } from "@/components/pricing/DesignPricing";
 import { CleaningPricing } from "@/components/pricing/CleaningPricing";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  graph,
+  jsonLdProps,
+  serviceSchema,
+} from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Dịch vụ thiết kế & thi công",
@@ -49,6 +56,19 @@ const iconMap = {
 export default function ServicesPage() {
   return (
     <>
+      <script
+        {...jsonLdProps(
+          graph(
+            serviceSchema(services),
+            faqSchema(faqs),
+            breadcrumbSchema([
+              { label: "Trang chủ", href: "/" },
+              { label: "Dịch vụ", href: "/dich-vu/" },
+            ])
+          )
+        )}
+      />
+
       <PageHeader
         eyebrow="Dịch vụ"
         title="Sáu nhóm dịch vụ, dùng trọn gói hay chọn từng phần đều được"

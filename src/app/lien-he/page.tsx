@@ -11,6 +11,7 @@ import {
 import { ContactForm } from "@/components/forms/ContactForm";
 import { Faq } from "@/components/ui/Faq";
 import { telHref, zaloHref } from "@/lib/utils";
+import { breadcrumbSchema, faqSchema, graph, jsonLdProps } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Liên hệ & đặt lịch khảo sát",
@@ -47,6 +48,18 @@ const channels = [
 export default function ContactPage() {
   return (
     <>
+      <script
+        {...jsonLdProps(
+          graph(
+            faqSchema(faqs),
+            breadcrumbSchema([
+              { label: "Trang chủ", href: "/" },
+              { label: "Liên hệ", href: "/lien-he/" },
+            ])
+          )
+        )}
+      />
+
       <PageHeader
         eyebrow="Liên hệ"
         title="Bắt đầu từ một buổi khảo sát miễn phí"
