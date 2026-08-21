@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 933" width="1400" height="933" role="img" aria-label="Ảnh minh họa công trình">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0b3f86"/>
+        <stop offset="0.55" stop-color="#1c5da8"/>
+        <stop offset="1" stop-color="#3f83c4"/>
+      </linearGradient>
+      <linearGradient id="gnd" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#04255c" stop-opacity="0.9"/>
+        <stop offset="1" stop-color="#04255c"/>
+      </linearGradient>
+      <linearGradient id="vig" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#001233" stop-opacity="0.55"/>
+        <stop offset="0.6" stop-color="#001233" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="1400" height="933" fill="url(#sky)"/>
+    <circle cx="1177.79" cy="205.26" r="149.28" fill="#ffffff" opacity="0.07"/>
+    <rect x="0" y="701.2" width="1400" height="231.8" fill="url(#gnd)"/>
+    <rect x="0" y="699.7" width="1400" height="1.5" fill="#6ec1fa" opacity="0.35"/>
+  <rect x="84" y="429.18" width="196" height="298.56" fill="#8fa9c9" opacity="0.5"/><rect x="1120" y="410.52" width="196" height="317.22" fill="#8fa9c9" opacity="0.45"/><rect x="280" y="354.54" width="840" height="373.2" fill="#e8eef7"/><rect x="280" y="354.54" width="840" height="59.71" fill="#002e6e"/><rect x="330.4" y="373.2" width="252" height="22.39" fill="#6ec1fa" opacity="0.9"/><rect x="616" y="373.2" width="84" height="22.39" fill="#ed0435"/><rect x="313.6" y="436.64" width="772.8" height="261.24" fill="#1e6fb8" opacity="0.85"/><rect x="313.6" y="436.64" width="10.08" height="261.24" fill="#002e6e"/><rect x="330.4" y="451.57" width="126" height="104.5" fill="#6ec1fa" opacity="0.55"/><rect x="468.16" y="436.64" width="10.08" height="261.24" fill="#002e6e"/><rect x="484.96" y="451.57" width="126" height="104.5" fill="#6ec1fa" opacity="0.55"/><rect x="622.72" y="436.64" width="10.08" height="261.24" fill="#002e6e"/><rect x="639.52" y="451.57" width="126" height="104.5" fill="#6ec1fa" opacity="0.55"/><rect x="777.28" y="436.64" width="10.08" height="261.24" fill="#002e6e"/><rect x="931.84" y="436.64" width="10.08" height="261.24" fill="#002e6e"/><rect x="948.64" y="451.57" width="126" height="104.5" fill="#6ec1fa" opacity="0.55"/><rect x="313.6" y="563.53" width="772.8" height="4.48" fill="#002e6e"/><rect x="565.6" y="585.92" width="268.8" height="14.93" fill="#c2d3e8"/>
+    <rect x="173.6" y="674" width="16.79" height="53.74" fill="#1e4a2c"/>
+    <circle cx="182" cy="643.77" r="43.66" fill="#2f6b3f"/>
+    <circle cx="155.13" cy="663.92" r="31.91" fill="#1e4a2c"/>
+    <circle cx="210.55" cy="660.56" r="28.55" fill="#1e4a2c"/>
+  <rect x="0" y="0" width="1400" height="933" fill="url(#vig)"/><text x="63" y="877.02" fill="#ffffff" opacity="0.45" font-family="Segoe UI, Arial, sans-serif" font-size="25" letter-spacing="4">ẢNH MINH HỌA</text></svg>

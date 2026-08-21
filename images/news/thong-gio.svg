@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Ảnh minh họa công trình">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0b3f86"/>
+        <stop offset="0.55" stop-color="#1c5da8"/>
+        <stop offset="1" stop-color="#3f83c4"/>
+      </linearGradient>
+      <linearGradient id="gnd" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#04255c" stop-opacity="0.9"/>
+        <stop offset="1" stop-color="#04255c"/>
+      </linearGradient>
+      <linearGradient id="vig" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#001233" stop-opacity="0.55"/>
+        <stop offset="0.6" stop-color="#001233" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="1200" height="750" fill="url(#sky)"/>
+    <circle cx="905.5" cy="165" r="120" fill="#ffffff" opacity="0.07"/>
+    <rect x="0" y="557.3" width="1200" height="192.7" fill="url(#gnd)"/>
+    <rect x="0" y="555.8" width="1200" height="1.5" fill="#6ec1fa" opacity="0.35"/>
+  <rect x="320.64" y="190.5" width="336" height="139.5" fill="#e8eef7"/><polygon points="280.32,190.5 488.64,123 696.96,190.5" fill="#c2d3e8"/><rect x="370.32" y="225.92" width="66.39" height="59.67" fill="#1e6fb8" opacity="0.75"/><rect x="455.44" y="225.92" width="66.39" height="59.67" fill="#1e6fb8" opacity="0.75"/><rect x="540.56" y="225.92" width="66.39" height="59.67" fill="#1e6fb8" opacity="0.75"/><rect x="240" y="330" width="672" height="225" fill="#e8eef7"/><rect x="240" y="330" width="672" height="13.5" fill="#c2d3e8"/><rect x="287.15" y="385.35" width="96.1" height="105.3" fill="#1e6fb8" opacity="0.75"/><rect x="410.35" y="385.35" width="96.1" height="105.3" fill="#1e6fb8" opacity="0.75"/><rect x="533.55" y="385.35" width="96.1" height="105.3" fill="#6ec1fa" opacity="0.9"/><rect x="670.08" y="361.5" width="208.32" height="180" fill="#6ec1fa" opacity="0.85"/><rect x="770.88" y="361.5" width="8.06" height="180" fill="#002e6e"/><rect x="180" y="334.5" width="60" height="11.25" fill="#c2d3e8"/><rect x="186" y="345.75" width="9.6" height="209.25" fill="#8fa9c9"/><rect x="207.6" y="345.75" width="9.6" height="209.25" fill="#8fa9c9"/><rect x="229.2" y="345.75" width="9.6" height="209.25" fill="#8fa9c9"/><rect x="240" y="322.5" width="672" height="7.5" fill="#ed0435"/><rect x="144" y="592.5" width="840" height="75" fill="#1e6fb8" opacity="0.55"/><rect x="144" y="592.5" width="840" height="9" fill="#6ec1fa" opacity="0.5"/><rect x="725.71" y="621.3" width="72" height="1.5" fill="#ffffff" opacity="0.18"/><rect x="545.58" y="642.26" width="72" height="1.5" fill="#ffffff" opacity="0.18"/><rect x="889.22" y="629.52" width="72" height="1.5" fill="#ffffff" opacity="0.18"/><rect x="641.06" y="630.93" width="72" height="1.5" fill="#ffffff" opacity="0.18"/><rect x="583.85" y="620.79" width="72" height="1.5" fill="#ffffff" opacity="0.18"/><rect x="785.34" y="624.07" width="72" height="1.5" fill="#ffffff" opacity="0.18"/>
+    <rect x="122.25" y="492.6" width="19.5" height="62.4" fill="#1e4a2c"/>
+    <circle cx="132" cy="457.5" r="50.7" fill="#2f6b3f"/>
+    <circle cx="100.8" cy="480.9" r="37.05" fill="#1e4a2c"/>
+    <circle cx="165.15" cy="477" r="33.15" fill="#1e4a2c"/>
+  
+    <rect x="1020.75" y="483" width="22.5" height="72" fill="#1e4a2c"/>
+    <circle cx="1032" cy="442.5" r="58.5" fill="#2f6b3f"/>
+    <circle cx="996" cy="469.5" r="42.75" fill="#1e4a2c"/>
+    <circle cx="1070.25" cy="465" r="38.25" fill="#1e4a2c"/>
+  
+    <rect x="1108.5" y="507" width="15" height="48" fill="#1e4a2c"/>
+    <circle cx="1116" cy="480" r="39" fill="#2f6b3f"/>
+    <circle cx="1092" cy="498" r="28.5" fill="#1e4a2c"/>
+    <circle cx="1141.5" cy="495" r="25.5" fill="#1e4a2c"/>
+  <rect x="0" y="0" width="1200" height="750" fill="url(#vig)"/><text x="54" y="705" fill="#ffffff" opacity="0.45" font-family="Segoe UI, Arial, sans-serif" font-size="22" letter-spacing="3.52">ẢNH MINH HỌA</text></svg>

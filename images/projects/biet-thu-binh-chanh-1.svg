@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 933" width="1400" height="933" role="img" aria-label="Ảnh minh họa công trình">
+    <defs>
+      <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#0b3f86"/>
+        <stop offset="0.55" stop-color="#1c5da8"/>
+        <stop offset="1" stop-color="#3f83c4"/>
+      </linearGradient>
+      <linearGradient id="gnd" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#04255c" stop-opacity="0.9"/>
+        <stop offset="1" stop-color="#04255c"/>
+      </linearGradient>
+      <linearGradient id="vig" x1="0" y1="1" x2="0" y2="0">
+        <stop offset="0" stop-color="#001233" stop-opacity="0.55"/>
+        <stop offset="0.6" stop-color="#001233" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="1400" height="933" fill="url(#sky)"/>
+    <circle cx="1177.98" cy="205.26" r="149.28" fill="#ffffff" opacity="0.07"/>
+    <rect x="0" y="695.45" width="1400" height="237.55" fill="url(#gnd)"/>
+    <rect x="0" y="693.95" width="1400" height="1.5" fill="#6ec1fa" opacity="0.35"/>
+  <rect x="374.08" y="236.98" width="392" height="173.54" fill="#e8eef7"/><polygon points="327.04,236.98 570.08,153.01 813.12,236.98" fill="#c2d3e8"/><rect x="432.04" y="281.04" width="77.46" height="74.23" fill="#1e6fb8" opacity="0.75"/><rect x="531.35" y="281.04" width="77.46" height="74.23" fill="#1e6fb8" opacity="0.75"/><rect x="630.66" y="281.04" width="77.46" height="74.23" fill="#1e6fb8" opacity="0.75"/><rect x="280" y="410.52" width="784" height="279.9" fill="#e8eef7"/><rect x="280" y="410.52" width="784" height="16.79" fill="#c2d3e8"/><rect x="335.01" y="479.38" width="112.11" height="130.99" fill="#6ec1fa" opacity="0.9"/><rect x="478.74" y="479.38" width="112.11" height="130.99" fill="#6ec1fa" opacity="0.9"/><rect x="622.48" y="479.38" width="112.11" height="130.99" fill="#1e6fb8" opacity="0.75"/><rect x="781.76" y="449.71" width="243.04" height="223.92" fill="#6ec1fa" opacity="0.85"/><rect x="899.36" y="449.71" width="9.41" height="223.92" fill="#002e6e"/><rect x="210" y="416.12" width="70" height="14" fill="#c2d3e8"/><rect x="217" y="430.11" width="11.2" height="260.31" fill="#8fa9c9"/><rect x="242.2" y="430.11" width="11.2" height="260.31" fill="#8fa9c9"/><rect x="267.4" y="430.11" width="11.2" height="260.31" fill="#8fa9c9"/><rect x="280" y="401.19" width="784" height="9.33" fill="#ed0435"/><rect x="168" y="737.07" width="980" height="93.3" fill="#1e6fb8" opacity="0.55"/><rect x="168" y="737.07" width="980" height="11.2" fill="#6ec1fa" opacity="0.5"/><rect x="421.43" y="804.38" width="84" height="1.5" fill="#ffffff" opacity="0.18"/><rect x="258.07" y="766.15" width="84" height="1.5" fill="#ffffff" opacity="0.18"/><rect x="375.78" y="810.8" width="84" height="1.5" fill="#ffffff" opacity="0.18"/><rect x="928.26" y="760.91" width="84" height="1.5" fill="#ffffff" opacity="0.18"/><rect x="1050.41" y="759.68" width="84" height="1.5" fill="#ffffff" opacity="0.18"/><rect x="250.96" y="781.41" width="84" height="1.5" fill="#ffffff" opacity="0.18"/>
+    <rect x="141.87" y="612.79" width="24.26" height="77.63" fill="#1e4a2c"/>
+    <circle cx="154" cy="569.13" r="63.07" fill="#2f6b3f"/>
+    <circle cx="115.19" cy="598.24" r="46.09" fill="#1e4a2c"/>
+    <circle cx="195.24" cy="593.39" r="41.24" fill="#1e4a2c"/>
+  
+    <rect x="1190.01" y="600.85" width="27.99" height="89.57" fill="#1e4a2c"/>
+    <circle cx="1204" cy="550.47" r="72.77" fill="#2f6b3f"/>
+    <circle cx="1159.22" cy="584.06" r="53.18" fill="#1e4a2c"/>
+    <circle cx="1251.58" cy="578.46" r="47.58" fill="#1e4a2c"/>
+  
+    <rect x="1292.67" y="630.71" width="18.66" height="59.71" fill="#1e4a2c"/>
+    <circle cx="1302" cy="597.12" r="48.52" fill="#2f6b3f"/>
+    <circle cx="1272.14" cy="619.51" r="35.45" fill="#1e4a2c"/>
+    <circle cx="1333.72" cy="615.78" r="31.72" fill="#1e4a2c"/>
+  <rect x="0" y="0" width="1400" height="933" fill="url(#vig)"/><text x="63" y="877.02" fill="#ffffff" opacity="0.45" font-family="Segoe UI, Arial, sans-serif" font-size="25" letter-spacing="4">ẢNH MINH HỌA</text></svg>

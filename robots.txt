@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://k3design.online
+Sitemap: https://k3design.online/sitemap.xml
