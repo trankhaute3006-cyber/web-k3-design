@@ -4,6 +4,9 @@ name: Build va tao file ZIP de upload thu cong
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build-zip:
     name: Build trang tinh va dong goi
@@ -44,3 +47,14 @@ jobs:
           include-hidden-files: true
           retention-days: 30
           if-no-files-found: error
+
+      # Day ket qua build len nhanh "dist" -> Hostinger GIT keo truc tiep tu nhanh nay
+      - name: Day ket qua build len nhanh dist
+        run: |
+          cd out
+          git init -b dist
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Build tu ${{ github.sha }}"
+          git push --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" dist
