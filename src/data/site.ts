@@ -9,7 +9,7 @@
 export const site = {
   // ---------- Nhan dien ----------
   name: "K3 Design",
-  legalName: "Công ty TNHH Thiết kế & Xây dựng K3 Design", // [SUA] ten phap nhan day du
+  legalName: "CÔNG TY TNHH K3 DESIGN", // ten tren giay phep kinh doanh
   tagline: "Thiết kế – Thi công trọn gói",
   slogan: "Kiến tạo không gian sống bền vững",
   description:
