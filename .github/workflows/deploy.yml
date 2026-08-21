@@ -32,9 +32,9 @@ jobs:
       - name: Kiem tra kieu du lieu
         run: npm run typecheck
 
-      - name: Tao anh placeholder (bo qua neu da co anh that)
-        run: npm run placeholders
-
+      # KHONG chay `npm run placeholders` o day. Toan bo anh da nam trong repo.
+      # Neu chay, moi lan deploy se ghi de anh — ke ca khi chu website da thay
+      # bang anh chup cong trinh that cung ten file.
       - name: Build trang tinh
         run: npm run build
         env:
