@@ -464,6 +464,12 @@ const NEWS = [
   ["bang-vat-tu", "thuong-mai"],
   ["nghiem-thu", "cong-nghiep"],
   ["ve-sinh-cong-nghiep", "noi_that"],
+  ["chi-phi-100m2", "nha-pho"],
+  ["mat-do-xay-dung", "nha-pho"],
+  ["xay-tho-tron-goi", "cong-nghiep"],
+  ["loai-mong", "cong-nghiep"],
+  ["cai-tao-hay-xay-lai", "nha-pho"],
+  ["bang-vat-tu-mau", "thuong-mai"],
 ];
 for (const [slug, kind] of NEWS) {
   add(`public/images/news/${slug}.svg`, 1200, 750, kind, LABEL);
