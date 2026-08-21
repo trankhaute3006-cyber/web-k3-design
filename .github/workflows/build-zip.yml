@@ -1,0 +1,46 @@
+name: Build va tao file ZIP de upload thu cong
+
+# Chi chay khi bam nut Run workflow trong tab Actions
+on:
+  workflow_dispatch:
+
+jobs:
+  build-zip:
+    name: Build trang tinh va dong goi
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Lay ma nguon
+        uses: actions/checkout@v4
+
+      - name: Cai dat Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Cai dat thu vien
+        run: npm ci
+
+      - name: Build trang tinh
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Kiem tra ket qua build
+        run: |
+          test -f out/index.html || (echo "Khong tim thay out/index.html" && exit 1)
+          test -f out/.htaccess  || echo "Canh bao: thieu .htaccess trong out/"
+          test -f out/contact.php || echo "Canh bao: thieu contact.php trong out/"
+          echo "So file se upload: $(find out -type f | wc -l)"
+          echo "Dung luong: $(du -sh out | cut -f1)"
+
+      # Tai len dang artifact -> tai ve tu tab Actions duoi dang file .zip
+      - name: Dong goi thanh artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: k3design-website
+          path: out/
+          include-hidden-files: true
+          retention-days: 30
+          if-no-files-found: error
