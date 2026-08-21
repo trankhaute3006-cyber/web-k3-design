@@ -16,7 +16,7 @@ export const site = {
     "K3 Design là đơn vị thiết kế kiến trúc, nội thất và thi công xây dựng trọn gói. Chúng tôi đồng hành cùng khách hàng từ bản vẽ ý tưởng đến ngày bàn giao chìa khóa.",
 
   // ---------- Ten mien ----------
-  url: "https://k3design.vn", // [SUA] ten mien that sau khi mua
+  url: "https://k3design.online", // ten mien chinh thuc
   locale: "vi_VN",
 
   // ---------- Lien he ----------
