@@ -1,8 +1,17 @@
 name: Build va tao file ZIP de upload thu cong
 
-# Chi chay khi bam nut Run workflow trong tab Actions
+# Chay tu dong moi lan day code len nhanh main, va chay duoc bang tay.
+# Nho vay file ZIP va nhanh dist luon la ban moi nhat — khong phai nho
+# bam nut truoc moi lan deploy.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
+
+# Khong cho hai lan chay chong len nhau khi push lien tiep
+concurrency:
+  group: build-zip
+  cancel-in-progress: true
 
 permissions:
   contents: write
