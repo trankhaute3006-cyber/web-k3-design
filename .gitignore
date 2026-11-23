@@ -11,3 +11,9 @@ tsconfig.tsbuildinfo
 
 # File ZIP dong goi thu cong, khong day len repo
 k3design-website.zip
+
+# Du lieu van hanh K3 — TUYET DOI khong day len GitHub
+# (khach hang, lead, hop dong, dong tien, bao gia, bao cao)
+K3-DESIGN_Bo-khung-van-hanh.xlsx
+K3-DESIGN_Bo-khung-van-hanh_backup_*.xlsx
+ho-so/
