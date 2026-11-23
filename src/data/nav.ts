@@ -50,6 +50,7 @@ export const mainNav: NavItem[] = [
       { label: "Xem tất cả dịch vụ", href: "/dich-vu/" },
     ],
   },
+  { label: "Khuyến mãi", href: "/khuyen-mai/" },
   {
     label: "Dự án",
     href: "/du-an/",
@@ -70,6 +71,7 @@ export const mainNav: NavItem[] = [
 export const flatNav: NavChild[] = [
   { label: "Giới thiệu", href: "/gioi-thieu/" },
   { label: "Dịch vụ", href: "/dich-vu/" },
+  { label: "Khuyến mãi", href: "/khuyen-mai/" },
   { label: "Dự án", href: "/du-an/" },
   { label: "Quy trình", href: "/quy-trinh/" },
   { label: "Tin tức", href: "/tin-tuc/" },
