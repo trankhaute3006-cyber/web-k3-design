@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MapPin, Phone, Mail, Clock, Facebook, Youtube, Instagram } from "lucide-react";
 import { site } from "@/data/site";
-import { services } from "@/data/services";
+import { serviceHref, services } from "@/data/services";
 import { flatNav } from "@/data/nav";
 import { Container } from "@/components/ui/Primitives";
 import { Logo } from "@/components/layout/Logo";
@@ -96,7 +96,7 @@ export function Footer() {
                 {services.map((s) => (
                   <li key={s.slug}>
                     <Link
-                      href={`/dich-vu/#${s.slug}`}
+                      href={serviceHref(s.slug)}
                       className="inline-flex min-h-9 items-center text-[0.9375rem] text-canvas/65 transition-colors hover:text-accent-bright"
                     >
                       {s.title}

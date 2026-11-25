@@ -269,5 +269,9 @@ export const services: Service[] = [
   },
 ];
 
+/** Dich vu co trang rieng thi tro ve trang do, con lai tro ve muc tren trang Dich vu */
+export const serviceHref = (slug: string) =>
+  slug === "ve-sinh-cong-nghiep" ? "/ve-sinh/" : `/dich-vu/#${slug}`;
+
 export const getService = (slug: string) =>
   services.find((s) => s.slug === slug);

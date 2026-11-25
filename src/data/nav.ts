@@ -1,4 +1,4 @@
-import { services } from "@/data/services";
+import { serviceHref, services } from "@/data/services";
 import { categoryLabels, projects, type ProjectCategory } from "@/data/projects";
 
 export type NavChild = {
@@ -44,12 +44,13 @@ export const mainNav: NavItem[] = [
     children: [
       ...services.map((s) => ({
         label: s.title,
-        href: `/dich-vu/#${s.slug}`,
+        href: serviceHref(s.slug),
         hint: s.priceHint,
       })),
       { label: "Xem tất cả dịch vụ", href: "/dich-vu/" },
     ],
   },
+  { label: "Vệ sinh", href: "/ve-sinh/" },
   { label: "Khuyến mãi", href: "/khuyen-mai/" },
   {
     label: "Dự án",
@@ -71,6 +72,7 @@ export const mainNav: NavItem[] = [
 export const flatNav: NavChild[] = [
   { label: "Giới thiệu", href: "/gioi-thieu/" },
   { label: "Dịch vụ", href: "/dich-vu/" },
+  { label: "Vệ sinh công nghiệp", href: "/ve-sinh/" },
   { label: "Khuyến mãi", href: "/khuyen-mai/" },
   { label: "Dự án", href: "/du-an/" },
   { label: "Quy trình", href: "/quy-trinh/" },

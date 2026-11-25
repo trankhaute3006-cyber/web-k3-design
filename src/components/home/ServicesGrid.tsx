@@ -9,7 +9,7 @@ import {
   SprayCan,
   ArrowRight,
 } from "lucide-react";
-import { services, type Service } from "@/data/services";
+import { serviceHref, services, type Service } from "@/data/services";
 import { Container, Section, SectionHeading } from "@/components/ui/Primitives";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -28,7 +28,7 @@ function ServiceItem({ service, index }: { service: Service; index: number }) {
   return (
     <Reveal as="li" delay={index * 60}>
       <Link
-        href={`/dich-vu/#${service.slug}`}
+        href={serviceHref(service.slug)}
         className="group flex h-full flex-col rounded-3xl border border-line bg-surface p-7 transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 hover:border-accent/40 hover:shadow-e2 lg:p-8"
       >
         <span className="inline-flex h-13 w-13 items-center justify-center rounded-2xl bg-accent-soft text-accent transition-colors duration-300 group-hover:bg-accent-bright group-hover:text-ink">
